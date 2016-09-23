@@ -141,6 +141,14 @@ public class LinkedList<E> implements List<E>{
 		return new RefIterator<E>(this);
 	}
 	
+	public ListIterator<E> listIterator() {
+		return new RefListIterator<E>(this);
+	}
+	
+	public ListIterator<E> listIterator(int start) {
+		return new RefListIterator<E>(this, start);
+	}
+	
 	public boolean containsNull() {
 		return true;
 	}

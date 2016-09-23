@@ -43,4 +43,8 @@ public interface List<E> {
     
     /** @return iterator */
     Iterator<E> iterator();
+    
+    ListIterator<E> listIterator();
+    
+    ListIterator<E> listIterator(int start);
 }
