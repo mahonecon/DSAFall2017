@@ -1,5 +1,15 @@
 package list;
 
-public interface ListIterator<E> {
-
+/** Permit traversal of a list in either direction */
+public interface ListIterator<E> extends Iterator<E> {
+	
+	/** @return true if there is a previous value */
+	boolean hasPrevious();
+	
+	/** @return previous value
+	 * pre: hasPrevious() == true */
+	E previous();
+	
+	/** Remove the value last obtained by a call to next or previous */
+	void remove();
 }
