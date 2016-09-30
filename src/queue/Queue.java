@@ -2,6 +2,7 @@ package queue;
 
 import list.*;
 
+/** Queue class, using LinkedList as backbone.*/
 public class Queue<E> implements QueueADT<E> {
 	List<E> values = new LinkedList<E>();
 	
