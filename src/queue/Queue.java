@@ -6,9 +6,7 @@ import list.*;
 public class Queue<E> implements QueueADT<E> {
 	List<E> values = new LinkedList<E>();
 	
-	public Queue() {
-		super();
-	}
+	public Queue() {} //Default constructor
 	
 	public void add(E value) {
 		values.add(value); //values.add(E value) automatically puts the value at the end of the list.
