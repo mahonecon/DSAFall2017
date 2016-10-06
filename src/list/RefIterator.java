@@ -16,6 +16,11 @@ public class RefIterator<E> implements Iterator<E>
 		return cursor != list.tail.prev;
 	}
 	
+	public boolean hasPrevious()
+	{
+		return cursor.prev != list.head; 
+	}
+	
 	public E next()
 	{
 		cursor = cursor.next;

@@ -12,4 +12,8 @@ public interface ListIterator<E> extends Iterator<E> {
 	
 	/** Remove the value last obtained by a call to next or previous */
 	void remove();
+	
+	/** Insert the given value just prior to the implicit cursor
+	 * position */
+	void add(E value);
 }

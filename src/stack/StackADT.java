@@ -12,4 +12,14 @@ public interface StackADT<E> {
 	
 	/** @return the top value of this stack */
 	E peek();
+	
+	/** Clear this StackADT */
+	void clear();
+	
+	/** @return true only if this StackADT is empty */
+	boolean isEmpty();
+	
+	/** @return true only if this StackADT is equal to the parameter,
+	 * other */
+	boolean equals(Object obj);
 }

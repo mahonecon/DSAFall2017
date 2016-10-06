@@ -39,6 +39,13 @@ public class LinkedList<E> implements List<E>{
 		size++;
 	}
 	
+//	public void add(E value, Node<E> next, Node<E> prev) { //Experimental add.
+//		Node<E> temp = new Node<E>(value, next, prev);
+//		next.prev = temp;
+//		prev.next = temp;
+//		size++;
+//	}
+	
 	public void add(int ndx, E value){
 		if(ndx == size) {
 			add(value);

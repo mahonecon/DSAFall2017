@@ -37,6 +37,8 @@ public class RefListIterator<E> extends RefIterator<E> implements ListIterator<E
 			return false;
 		if(!forward) 
 			return cursor.prev != list.head;
+		if(cursor.prev == null)
+			return false;
 		else return true;
 	}
 	
@@ -52,4 +54,22 @@ public class RefListIterator<E> extends RefIterator<E> implements ListIterator<E
 		if(!forward)
 			cursor = cursor.next;
 	}
+	
+	public void add(E value) {
+		Node<E> temp;
+		
+		if(forward) {
+			temp = new Node<E>(value, cursor.next, cursor);
+			temp.prev.next = temp;
+			temp.next.prev = temp;
+			cursor = cursor.next;
+		} else  {
+			temp = new Node<E>(value, cursor, cursor.prev);
+			temp.prev.next = temp;
+			temp.next.prev = temp;
+		}
+		
+		list.size++;
+	}
 }
+

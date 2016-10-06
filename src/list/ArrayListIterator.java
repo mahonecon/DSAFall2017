@@ -41,4 +41,9 @@ public class ArrayListIterator<E> extends ArrayIterator<E> implements ListIterat
 		list.remove(cursor);
 	}
 	
+	public void add(E value) {
+		list.add(cursor, value);
+		cursor++;
+	}
+	
 }
