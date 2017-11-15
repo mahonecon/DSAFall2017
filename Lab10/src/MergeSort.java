@@ -5,7 +5,7 @@ public class MergeSort {
 	public MergeSort() {
 	}//empty default constructor
 	
-	public void sort(int[] array) { //iterative merge sort
+	public int[] sort(int[] array) { //iterative merge sort
 		if(array.length > 1) {
 			int middle = array.length / 2; //Finds middle of array
 			
@@ -14,7 +14,7 @@ public class MergeSort {
 				left[i] = array[i];
 			} //Fills the left array with all items up to the middle of original array
 			
-			int[] right = new int[middle]; //Other half of array
+			int[] right = new int[array.length - middle]; //Other half of array
 			for(int i = middle; i < array.length; i++) {
 				right[i - middle] = array[i];
 			} //Same as left, except starting from middle and ending at length
@@ -47,9 +47,6 @@ public class MergeSort {
 				apos++;
 			}//end right while
 		} //end if
-	}//end sort
-	
-	public int[] getArray() {
 		return array;
-	}
+	}//end sort
 }
