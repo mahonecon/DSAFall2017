@@ -1,5 +1,11 @@
 import java.util.Random;
 
+/*
+ * Purpose: Data Structure and Algorithms Lab 10
+ * Status: Complete and thoroughly tested
+ * Last update: 11/18/17
+ * @author: Conor J. Mahoney
+ */
 public class Quicksort {
 	private Random randy = new Random();
 	
