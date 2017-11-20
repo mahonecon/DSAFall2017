@@ -1,8 +1,9 @@
 For the Project our group plans on using one queue ADT per runway, plus a queue storing every runway at the airport, and one array based list ADT.  The queue ADT will be used for the runway.  The reason why queues are being used for the runways is because they are the fastest ADT for FiFo operations.  The list will be used to track the planes not within a runway that are being used in the project. 
 We are going to make a class for the planes with the following fields flight number(int), destination(String) and the runway the plane should take off from(int).  Runways will be another class that will be a subclass of queue that adds a name method.
-The work will be divided into two parts, big and small.  One person will be making the classes and methods for the individual parts of the project while the other assembles it into the final menu driven project.  The presentation and final write up will be made by both memebers completely collabrativly upon completion of the application.
+The work will be divided into two parts, big and small. One person will be making the classes and methods for the individual parts of the project while the other assembles it into the final menu driven project.  The presentation and final write up will be made by both memebers completely collabrativly upon completion of the application.
 The space complexity for the array based list, and the queue is (2+numItems)* 4. The time complexity for the list has an average case of complexity of (n-1)/2 and n/2 for remove and add respectivly. The time complexity for the enqueue, dequeue, and size within the queue ADT are all a BigO(1).
-A Counter will be used to track the number of planes who have taken off for the 8th menu option. 
+A Counter will be used to track the number of planes who have taken off for the 8th menu option.
+Each class will have the appropriate getters for options 6 and 7.
 When a Plane first enters the system they are automatically placed in their user specified runway.  The constructer for the plane class will be used to set these fields.
 Once a Plane take off for option 2 it will be completely removed from the system.  The other Planes at the front of their queues will be moved to the list of planes outside of the system
 A search sequential method will be used to find the plane the user specifies to re enter the runway for option 3.
