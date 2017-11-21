@@ -1,0 +1,651 @@
+/*
+ * Purpose: Data Structure and Algorithms Lab 10
+ * Status: Complete and thoroughly tested
+ * Last update: 11/18/17
+ * @author: Conor J. Mahoney
+ */
+public class MergeSort {
+    private int[] array;
+
+    public MergeSort() {
+    }//empty default constructor
+
+    public int[] sort(int[] array) {
+        this.array = array;
+        for(int i = 1; i <= (array.length/2) + 2; i *= 2) {
+            for(int j = i; j < array.length; j += 2 * i) {
+                merge(array, j-i, j, Math.min(j + i, array.length)); //Breaks the array into sub arrays and then re-merges them together in the correct ordered positions
+            }
+        }
+        return array;
+    }//end sort
+
+    //Merges arrays together in ordered position.
+    public void merge(int[] array, int start, int mid, int end) {
+        int[] temp = new int[end - start]; //temporary merge array
+        int j = 0;
+        int r = 0;
+        int i = 0;
+
+        while(j < mid - start && r < end - mid) {
+            if(array[start + j] < array[mid + r]) {
+                temp[i] = array[start + j];
+                j++;
+                i++;
+            } else {
+                temp[i] = array[mid + r];
+                r++;
+                i++;
+            }//end if/else
+        }//end while
+
+        //cleans up remaining items from the right array
+        while(r < end - mid) {
+            temp[i] = array[mid + r];
+            i++;
+            r++;
+        }//end while
+
+        //Cleans up remaining items from the left array
+        while(j < mid - start) {
+            temp[i] = array[start + j];
+            j++;
+            i++;
+        }//end while
+
+        //Manual Array Copy from *start* to *temp.length*
+        for(i = 0; i < temp.length; i++) {
+            array[start + i] = temp[i];
+        }
+    }//end merge
+}
+::::::::::::::
+Quicksort.java
+::::::::::::::
+import java.util.Random;
+
+/*
+ * Purpose: Data Structure and Algorithms Lab 10
+ * Status: Complete and thoroughly tested
+ * Last update: 11/18/17
+ * @author: Conor J. Mahoney
+ */
+public class Quicksort {
+    private Random randy = new Random();
+
+    //Breaks the array into partitions, and sorts the partitions
+    private int partition(int[] array, int min, int max) {
+        int pivotIndex = randy.nextInt(max - min + 1) + min; //random pivot each time
+        int pivot = array[pivotIndex];
+        int a = min;
+        int b = max;
+
+        while(a <= b) { //while the iterating and decrementing values are not equal to each other
+            while(array[a] < pivot) { //if the item at array[a] is less than the pivot, increment a
+                a++;
+            }
+            while(array[b] > pivot) { //if the item at array[b] is greater than the pivot, increment b
+                b--;
+            }
+            if(a <= b) {
+                //swap array[a] and array[b]
+                int temp = array[a];
+                array[a] = array[b];
+                array[b] = temp;
+                a++; //increment a
+                b--; //decrement b
+            }
+        }
+        return a; //return a as the new index
+    }//end partition
+
+    public int[] sort(int[] array, int min, int max) {
+        int index = partition(array, min, max);
+
+        if(min < index - 1) { //If the minimum is below index - 1, send the array to be partitioned and sorted again
+            sort(array, min, index - 1);
+        }
+        if(index < max) { //If the maximum is greater than the index, send the array to be sorted again.
+            sort(array, index, max);
+        }
+        return array;
+    }//end sort
+}
+::::::::::::::
+Driver.java
+::::::::::::::
+import java.io.*;
+/*
+ * Purpose: Data Structure and Algorithms Lab 10
+ * Status: Complete and thoroughly tested
+ * Last update: 11/18/17
+ * @author: Conor J. Mahoney
+ */
+public class Driver {
+
+    public static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+    public static int[] array;
+    public static int pos;
+    public static MergeSort merger = new MergeSort();
+    public static Quicksort quickie = new Quicksort();
+
+    public static void main(String[] args) throws IOException {
+
+        int code = 0;
+
+        while(code != 5) {
+            System.out.println("Menu! Input number to reach menu option!");
+            System.out.println("\t" + "1. Initialize array");
+            System.out.println("\t" + "2. Add to array");
+            System.out.println("\t" + "3. Merge Sort array");
+            System.out.println("\t" + "4. Quick Sort array");
+            System.out.println("\t" + "5. Exit");
+            System.out.print("Make your menu selection now: ");
+            code = Integer.valueOf(stdin.readLine());
+            System.out.print(code + "\n");
+
+            switch(code) {
+
+            case 1:
+                one();
+                break;
+
+            case 2:
+                two();
+                break;
+
+            case 3:
+                three();
+                break;
+
+            case 4:
+                four();
+                break;
+
+            } //end switch
+        }//end while
+    }//end main
+
+    public static void one() throws IOException {
+        System.out.print("Input desired size of array: ");
+        int temp = Integer.valueOf(stdin.readLine());
+        System.out.print(temp + "\n");
+        array = new int[temp];
+        pos = 0;
+        System.out.println("Array of size " + temp + " created.");
+    }//end one
+
+    public static void two() throws IOException {
+        if(pos != array.length) {
+            System.out.print("Add item to array: ");
+            int temp = Integer.valueOf(stdin.readLine());
+            System.out.print(temp + "\n");
+            array[pos++] = temp;
+            System.out.println(temp + " added to array! there are " + (array.length - pos) + " positions left in the array!");
+        } else {
+            System.out.println("Cannot add to array! Array is full!");
+        }
+    }//end two
+
+    public static void three() {
+        System.out.print("Array before sort: [");
+        for(int i = 0; i < pos-1; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.print(array[pos-1] + "] \n");
+        array = merger.sort(array);
+        System.out.print("Array after sort: [");
+        for(int i = 0; i < pos-1; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.print(array[pos - 1] + "] \n");
+    }//end three
+
+    public static void four() throws IOException {
+        System.out.print("Choose minimum index for sort (can choose from " + 0 + " - " + (pos-1) + "): ");
+        int min = Integer.valueOf(stdin.readLine());
+        System.out.print(min + "\n");
+        System.out.print("Choose maximum index for sort (can choose from " + min + " - " + (pos-1) + "): ");
+        int max = Integer.valueOf(stdin.readLine());
+        System.out.print(max + "\n");
+        System.out.print("Array before sort: [");
+        for(int i = 0; i < pos-1; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.print(array[pos-1] + "] \n");
+        array = quickie.sort(array, min, max);
+        System.out.print("Array after sort: [");
+        for(int i = 0; i < pos-1; i++) {
+            System.out.print(array[i] + ", ");
+        }
+        System.out.print(array[pos - 1] + "] \n");
+    }//end four
+}
+::::::::::::::
+output
+::::::::::::::
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 1
+Input desired size of array: 8
+Array of size 8 created.
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 0
+0 added to array! there are 7 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 2
+2 added to array! there are 6 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 4
+4 added to array! there are 5 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 6
+6 added to array! there are 4 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 1
+1 added to array! there are 3 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 3
+3 added to array! there are 2 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 5
+5 added to array! there are 1 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 7
+7 added to array! there are 0 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 3
+Array before sort: [0, 2, 4, 6, 1, 3, 5, 7] 
+Array after sort: [0, 1, 2, 3, 4, 5, 6, 7] 
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 1
+Input desired size of array: 8
+Array of size 8 created.
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 1
+1 added to array! there are 7 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 2
+2 added to array! there are 6 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 3
+3 added to array! there are 5 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 4
+4 added to array! there are 4 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 5
+5 added to array! there are 3 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 6
+6 added to array! there are 2 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 7
+7 added to array! there are 1 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 8
+8 added to array! there are 0 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 3
+Array before sort: [1, 2, 3, 4, 5, 6, 7, 8] 
+Array after sort: [1, 2, 3, 4, 5, 6, 7, 8] 
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 1
+Input desired size of array: 5
+Array of size 5 created.
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 7
+7 added to array! there are 4 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 13
+13 added to array! there are 3 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 72
+72 added to array! there are 2 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 8
+8 added to array! there are 1 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 21
+21 added to array! there are 0 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 3
+Array before sort: [7, 13, 72, 8, 21] 
+Array after sort: [7, 8, 13, 21, 72] 
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 1
+Input desired size of array: 10
+Array of size 10 created.
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 1
+1 added to array! there are 9 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 2
+2 added to array! there are 8 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 3
+3 added to array! there are 7 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 4
+4 added to array! there are 6 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 5
+5 added to array! there are 5 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 6
+6 added to array! there are 4 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 7
+7 added to array! there are 3 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 8
+8 added to array! there are 2 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 9
+9 added to array! there are 1 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 10
+10 added to array! there are 0 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 4
+Choose minimum index for sort (can choose from 0 - 9): 0
+Choose maximum index for sort (can choose from 0 - 9): 9
+Array before sort: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+Array after sort: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 1
+Input desired size of array: 5
+Array of size 5 created.
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 12
+12 added to array! there are 4 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 27
+27 added to array! there are 3 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 9
+9 added to array! there are 2 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 18
+18 added to array! there are 1 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 2
+Add item to array: 83
+83 added to array! there are 0 positions left in the array!
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 4
+Choose minimum index for sort (can choose from 0 - 4): 0
+Choose maximum index for sort (can choose from 0 - 4): 4
+Array before sort: [12, 27, 9, 18, 83] 
+Array after sort: [9, 12, 18, 27, 83] 
+Menu! Input number to reach menu option!
+	1. Initialize array
+	2. Add to array
+	3. Merge Sort array
+	4. Quick Sort array
+	5. Exit
+Make your menu selection now: 5
