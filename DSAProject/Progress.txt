@@ -1,0 +1,7 @@
+As of 28 November 2017, our group has completed several of our preliminary goals for the project.  We have created a Runway class that serves as a specialized Queue for the storage of Planes.
+
+The Runway class takes a String as its passed parameter, and uses this String to assign itself a name, that can be used to distinguish between multiple runways.
+
+We have also created a custom Plane class that contains several parameters necessary to distinguishing between Planes.  The Plane class takes 3 passed parameters, int flightNumber, String destination, and String runway.  These 3 parameters make it possible to keep track of the plane as it "travels"
+
+Our Class Project currently contains 5 .java classes, an Array-based Queue implementation, a QueueInterface, a QueueException, the custom Queue-based Runway class, and the custom Plane class.
