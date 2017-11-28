@@ -1,6 +1,10 @@
-public class MyBinarySearchTree<T extends KeyedItem<KT>,
-                            KT extends Comparable<? super KT>>
-       extends BinaryTreeBasis<T> {
+/*
+ * Purpose: Data Structure and Algorithms Lab 11
+ * Status: Complete and thoroughly tested
+ * Last update: 11/27/17
+ * @author: Conor J. Mahoney
+ */
+public class MyBinarySearchTree<T extends KeyedItem<KT>, KT extends Comparable<? super KT>> extends BinaryTreeBasis<T> {
   // inherits isEmpty(), makeEmpty(), getRootItem(), and
   // the use of the constructors from BinaryTreeBasis
 
@@ -11,7 +15,8 @@ public class MyBinarySearchTree<T extends KeyedItem<KT>,
     super(rootItem);
   }  // end constructor
 
-  public void setRootItem(T newItem) {
+  public void setRootItem(T newItem) throws UnsupportedOperationException {
+    throw new UnsupportedOperationException();
   }  // end setRootItem
 
   public void insert(T newItem) {
@@ -19,19 +24,25 @@ public class MyBinarySearchTree<T extends KeyedItem<KT>,
   }  // end insert
 
   public T retrieve(KT searchKey) {
-      TreeNode<T> temp = root;
-      while(temp != null) {
-          int result;
-          result = searchKey.compareTo((KT)temp.getItem());
-          if(result < 0) {
-              temp = temp.getLeftChild();
-          } else if(result > 0) {
-              temp = temp.getRightChild();
-          } else {
-              return temp.getItem();
-          }
-      } // end while
-      return null;
+        TreeNode<T> temp = root;
+        T item = null;
+        int compare;
+        if(isEmpty() == true) {
+            return null;
+        }
+        else {
+            while(temp.getLeftChild() != null || temp.getRightChild() != null || item == null) {
+                compare = searchKey.compareTo(item.getKey());
+                if(compare == 0) {
+                    item = (T) temp.getItem();
+                } else if (compare < 0) {
+                    temp = temp.getLeftChild();
+                } else if (compare > 0) {
+                    temp = temp.getRightChild();
+                }
+            }
+        }
+        return item;
   }  // end retrieve
 
   public void delete(KT searchKey) throws TreeException {
@@ -155,8 +166,12 @@ public class MyBinarySearchTree<T extends KeyedItem<KT>,
 
   protected T findLeftmost(TreeNode<T> tNode)  {
     TreeNode<T> temp = tNode;
-    while(temp.getLeftChild() != null) {
+    if(isEmpty() == true) {
+        return null;
+    } else {
+        while(temp.getLeftChild() != null) {
         temp = temp.getLeftChild();
+        }
     }
     return temp.getItem();
   }

@@ -1,20 +1,20 @@
 public interface BSTPInterface <T extends KeyedItem<KT>,KT extends Comparable<? super KT>>  {
    
-public int getHeight();
+public int getHeight(TreeNode root);
 // returns the height of the tree (recursive implementation)
 
-public int getSize();
+public int getSize(TreeNode root);
 // returns the number of nodes in the tree(recursive implementation)
 
-public String toStringInorder();
+public String toStringInorder(TreeNode root);
 // returns String representation of Tree with items in Inorder
 //(recursive implementation)
 
-public String toStringPreorder();
+public String toStringPreorder(TreeNode root);
 // returns String representation of Tree with items in Preorder
 //(recursive implementation)
 
-public String toStringPostorder();
+public String toStringPostorder(TreeNode root);
 // returns String representation of Tree with items in Postorder
 // (recursive implementation)
   
