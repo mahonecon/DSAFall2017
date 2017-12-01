@@ -1,3 +1,4 @@
+
 import java.io.*;
 
 public class Driver {
@@ -13,16 +14,7 @@ public class Driver {
         while(code != 9) {
         	System.out.println("Please enter the number of runways at the airport: ");
         	int numRunways = Integer.valueOf(stdin.readLine());
-        	System.out.println("Menu! Input number to reach menu option!");
-            System.out.println("\t" + "1. Plane enters the system.");
-            System.out.println("\t" + "2. Plane takes off.");
-            System.out.println("\t" + "3. Plane is allowed to re-enter a runway.");
-            System.out.println("\t" + "4. Runway opens.");
-            System.out.println("\t" + "5. Runway closes.");
-            System.out.println("\t" + "6. Display info about planes waiting to take off.");
-            System.out.println("\t" + "7. Display info about planes waiting to be allowed to re-enter a runway.");
-            System.out.println("\t" + "8. Display number of planes who have taken off.");
-            System.out.println("\t" + "9. Exit.");
+        	menu();
         	System.out.print("Make your menu selection now: ");
         	code = Integer.valueOf(stdin.readLine());
         	System.out.print(code + "\n");
@@ -31,40 +23,81 @@ public class Driver {
         	
         	case 1:
         		one();
+        		menu();
+        		System.out.println("Please select a new menu option");
+        		code = Integer.valueOf(stdin.readLine());
         		break;
         		
         	case 2:
         		two();
+        		menu();
+        		System.out.println("Please select a new menu option");
+        		code = Integer.valueOf(stdin.readLine());
         		break;
         		
         	case 3:
         		three();
+        		menu();
+        		System.out.println("Please select a new menu option");
+        		code = Integer.valueOf(stdin.readLine());
         		break;
         		
         	case 4:
         		four();
+        		menu();
+        		System.out.println("Please select a new menu option");
+        		code = Integer.valueOf(stdin.readLine());
         		break;
         		
         	case 5:
         		five();
+        		menu();
+        		System.out.println("Please select a new menu option");
+        		code = Integer.valueOf(stdin.readLine());
         		break;
         		
         	case 6:
         		six();
+        		menu();
+        		System.out.println("Please select a new menu option");
+        		code = Integer.valueOf(stdin.readLine());
         		break;
         		
         	case 7:
         		seven();
+        		menu();
+        		System.out.println("Please select a new menu option");
+        		code = Integer.valueOf(stdin.readLine());
         		break;
         	
         	case 8:
         		eight();
+        		menu();
+        		System.out.println("Please select a new menu option");
+        		code = Integer.valueOf(stdin.readLine());
+        		break;
+        	default:
+        		System.out.println("Invalid menu choice, try again!!!");
+        		menu();
+        		code = Integer.valueOf(stdin.readLine());
         		break;
         		
         	} //end switch
         }//end while
 	}//end main
-	
+	public static void menu(){
+		System.out.println("Menu! Input number to reach menu option!");
+        System.out.println("\t" + "1. Plane enters the system.");
+        System.out.println("\t" + "2. Plane takes off.");
+        System.out.println("\t" + "3. Plane is allowed to re-enter a runway.");
+        System.out.println("\t" + "4. Runway opens.");
+        System.out.println("\t" + "5. Runway closes.");
+        System.out.println("\t" + "6. Display info about planes waiting to take off.");
+        System.out.println("\t" + "7. Display info about planes waiting to be allowed to re-enter a runway.");
+        System.out.println("\t" + "8. Display number of planes who have taken off.");
+        System.out.println("\t" + "9. Exit.");
+        System.out.print("Make your menu selection now: ");
+	}
 	public static void one() {}
 	public static void two() {}
 	public static void three() {}
