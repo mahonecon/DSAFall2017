@@ -75,7 +75,7 @@ public class Driver {
         }//end while
     }//end main
 
-    //@author Nick LaSala
+    //@author Nic La Sala
     public static void one() throws IOException {
         System.out.println("Enter the flight number for the new plane");
         int fnum = Integer.valueOf(stdin.readLine());
@@ -157,7 +157,7 @@ public class Driver {
         }
     }
 
-    //@author Nick LaSala
+    //@author Nic La Sala
     public static void three() throws IOException {
 
         if (planes.isEmpty() == true) {
@@ -201,7 +201,7 @@ public class Driver {
         }
     }
 
-    //@author Nick LaSala
+    //@author Nic La Sala
     public static void four() throws IOException {
         System.out.println("Enter the name of runway number " + (airport.size() + 1) + ": ");
         String runwayName = stdin.readLine();
@@ -229,7 +229,14 @@ public class Driver {
     public static void five() {
     }
 
+    //@author Nic La Sala
     public static void six() {
+    	System.out.println("These planes are awaiting take-off");
+    	for(int s = 0; s < airport.size();s++) {
+    		if(airport.get(s)!= null) {
+    			System.out.println("Flight: "+ airport.get(s).peek().getFlightNumber() +" to" + airport.get(s).peek().getDestination());
+    		}
+    	}
     }
 
     public static void seven() {
