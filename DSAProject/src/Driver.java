@@ -220,6 +220,7 @@ public class Driver {
             } else {
                 System.out.println("Runway name alreay exists, try a different name");
                 runwayName = stdin.readLine();
+                dup = false;
             }//end if/else
         } //end while
 
