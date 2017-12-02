@@ -9,6 +9,7 @@ public class Driver {
     public static ListArrayBasedPlus<String> names = new ListArrayBasedPlus<String>();
     public static ListArrayBasedPlus<Integer> numbers = new ListArrayBasedPlus<Integer>();
     public static int runwayCounter = 0;
+    public static int takeOffs = 0;
 
     public static void main(String[] args) throws IOException {
 
@@ -123,22 +124,25 @@ public class Driver {
         boolean takeOff = false;
         Runway run;
         while (takeOff == false || takeOffAttempts != airport.size() - 1) {
-            if (runwayCounter == airport.size()) {
+            if (runwayCounter == airport.size()) { //if runwayCounter hits the last runway in the list, start from 0.
                 runwayCounter = 0;
-            }
-            run = airport.get(runwayCounter);
+            }//end if
+            run = airport.get(runwayCounter); //assign temporary runway value to airport.get(runwayCounter)
+            airport.remove(runwayCounter);
             try {
                 Plane p = (Plane) run.dequeue();
                 System.out.println("Allow Plane with Flight number " + p.getFlightNumber() + " to take off from Runway " + run.getName() + "? (Y/N)");
                 String str = stdin.readLine().toUpperCase();
                 if (str.equals("Y")) {
                     System.out.println("Plane with Flight number: " + p.getFlightNumber() + " has taken off from Runway " + run.getName());
+                    takeOffs++;
                     takeOff = true;
                 } else {
                     planes.add(planes.size(), p);
                     System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
                     takeOffAttempts++;
                 }
+                airport.add(runwayCounter, run);
                 runwayCounter++;
             } catch (QueueException q) {
                 runwayCounter++;
@@ -146,7 +150,7 @@ public class Driver {
             }
         }
         if (takeOffAttempts == airport.size() - 1) {
-            System.out.println("No planes currently cleared for take-off!");
+            System.out.println("No plane on any runway!");
         }
     }
 
@@ -154,7 +158,7 @@ public class Driver {
     }
 
     public static void four() throws IOException {
-        System.out.println("Enter the name of the new runway");
+        System.out.println("Enter the name of runway number " + (airport.size() + 1) + ": ");
         String runwayName = stdin.readLine();
         boolean dup = false;
         boolean added = false;
