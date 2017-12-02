@@ -22,10 +22,8 @@ public class Driver {
             str = str.toUpperCase();
             Runway run = new Runway(str);
             names.add(names.size(), str);
-            airport.add(runwayCounter, run);
-            runwayCounter++;
+            airport.add(airport.size(), run);
         }
-        runwayCounter = 0;
 
         while (code != 9) {
             System.out.println("Menu! Input number to reach menu option!");
