@@ -158,9 +158,51 @@ public class Driver {
     }
 
     //@author Nick LaSala
-    public static void three() {
-    }
 
+	public static void three() throws IOException {
+
+		if(planes.isEmpty() == true) {
+			System.out.println("No Planes are awaiting re-entry!");
+		}
+		else {
+			System.out.println("Please enter flight number for plane re-entering runway");
+			int rnum = Integer.valueOf(stdin.readLine());
+			boolean realNum = false; 
+			boolean op = false;
+			int pos = 0;
+			int run =0;
+			boolean reAdded = false;
+			while(reAdded = false) {
+				for(int e = 0; e < planes.size(); e++) {
+					if(rnum == planes.get(e).getFlightNumber()) {
+						pos = e;
+						realNum = true;
+					}
+				}
+				if(realNum == true) {
+					for(int ro =0; ro < airport.size();ro++) {
+						if(planes.get(pos).getRunway().equals(airport.get(ro).getName())) {
+							run = ro;
+							op = true;
+						}
+					}
+					if(op == true) {
+						airport.get(run).enqueue(planes.get(pos));
+						System.out.println("Plane number: " + rnum+" has re-entered.");
+						reAdded = true;
+					}
+					else{
+						System.out.println("That plane's runway has closed, try another");
+						rnum =Integer.valueOf(stdin.readLine());
+					}
+				}
+				else {
+					System.out.println("That plane's is not awaiting re-entry, try another");
+					rnum =Integer.valueOf(stdin.readLine());
+				}
+			}
+		}
+	}
     //@author Nick LaSala
     public static void four() throws IOException {
         System.out.println("Enter the name of runway number " + (airport.size() + 1) + ": ");
