@@ -118,7 +118,7 @@ public class Driver {
         }
     }
 
-    public static void two() {
+    public static void two() throws IOException {
         int takeOffAttempts = 0;
         boolean takeOff = false;
         Runway run;
@@ -129,9 +129,17 @@ public class Driver {
             run = airport.get(runwayCounter);
             try {
                 Plane p = (Plane) run.dequeue();
-                System.out.println("Plane with Flight number: " + p.getFlightNumber() + " has taken off from Runway " + run.getName());
+                System.out.println("Allow Plane with Flight number " + p.getFlightNumber() + " to take off from Runway " + run.getName() + "? (Y/N)");
+                String str = stdin.readLine().toUpperCase();
+                if(str.equals("Y")) {
+                    System.out.println("Plane with Flight number: " + p.getFlightNumber() + " has taken off from Runway " + run.getName());
+                    takeOff = true;
+                } else {
+                    planes.add(planes.size(), p);
+                    System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
+                    takeOffAttempts++;
+                }
                 runwayCounter++;
-                takeOff = true;
             } catch (QueueException q) {
                 runwayCounter++;
                 takeOffAttempts++;
