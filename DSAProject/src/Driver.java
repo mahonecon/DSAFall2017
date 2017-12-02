@@ -17,6 +17,7 @@ public class Driver {
                     System.out.print("Name of Runway " + (i+1) + ": ");
                     String str = stdin.readLine();
                     Runway run = new Runway(str);
+                    names.add(names.size(), str);
                     airport.enqueue(run);
                 }
         
