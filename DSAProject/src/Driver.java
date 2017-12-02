@@ -74,7 +74,7 @@ public class Driver {
             } //end switch
         }//end while
     }//end main
-    
+
     //@author Nick LaSala
     public static void one() throws IOException {
         System.out.println("Enter the flight number for the new plane");
@@ -156,9 +156,11 @@ public class Driver {
             System.out.println("No plane on any runway!");
         }
     }
+
     //@author Nick LaSala
     public static void three() {
     }
+
     //@author Nick LaSala
     public static void four() throws IOException {
         System.out.println("Enter the name of runway number " + (airport.size() + 1) + ": ");
