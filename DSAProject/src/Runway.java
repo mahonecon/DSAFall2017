@@ -1,4 +1,4 @@
-public class Runway extends Queue{
+public class Runway<T> extends Queue<T>{
 	protected String name;
 	public Runway(String name) {
 		super();
