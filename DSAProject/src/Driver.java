@@ -220,15 +220,18 @@ public class Driver {
             } else {
                 System.out.println("Runway name alreay exists, try a different name");
                 runwayName = stdin.readLine();
+                dup = false;
             }//end if/else
         } //end while
 
     }//end four
 
+    //@author Conor Mahoney
     public static void five() throws IOException {
         boolean closed = false;
         boolean found = false;
         String str = "";
+        String newRun = "";
         while (!closed) {
             System.out.print("Enter runway: ");
             str = stdin.readLine().toUpperCase();
@@ -237,9 +240,23 @@ public class Driver {
                 Runway r = airport.get(i);
                 if (r.getName().equals(str)) {
                     found = true;
-                    ListArrayBasedPlus<Plane> temp = new ListArrayBasedPlus<Plane>();
-
+                    while (!r.isEmpty()) {
+                        Plane p = (Plane) r.dequeue();
+                        System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
+                        newRun = stdin.readLine().toUpperCase();
+                        System.out.print(newRun + "/n");
+                        while (newRun.equals(str)) {
+                            System.out.println("This is the runway that is closing!");
+                        }
+                        for (int j = 0; j < airport.size(); i++) {
+                            Runway r2 = airport.get(j);
+                            if (r2.getName().equals(newRun)) {
+                                System.out.println("Flight " + p.getFlightNumber() + " is now awaiting takeoff at runway " + str);
+                            }
+                        }
+                    }
                     closed = true;
+                    i = airport.size();
                 }
             }
             if (!found) {
