@@ -163,8 +163,9 @@ public class Driver {
         if (planes.isEmpty() == true) {
             System.out.println("No Planes are awaiting re-entry!");
         } else {
-            System.out.println("Please enter flight number for plane re-entering runway");
+            System.out.print("Please enter flight number for plane re-entering runway: ");
             int rnum = Integer.valueOf(stdin.readLine());
+            System.out.print(rnum + "/n");
             boolean realNum = false;
             boolean op = false;
             int pos = 0;
