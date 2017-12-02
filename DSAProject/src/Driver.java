@@ -5,7 +5,7 @@ public class Driver {
 	public static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
 	public static Queue<Runway> airport = new Queue<Runway>();
 	public static ListArrayBasedPlus planes = new ListArrayBasedPlus();
-	
+	public static ListArrayBasedPlus names = new ListArrayBasedPlus();
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -76,7 +76,30 @@ public class Driver {
 	public static void one() {}
 	public static void two() {}
 	public static void three() {}
-	public static void four() {}
+	public static void four() throws IOException {
+		System.out.println("Enter the name of the new runway");
+		String runwayName = stdin.readLine();
+		boolean dup = false;
+		boolean added = false;
+		while(added == false) {
+			for(int i = 0;i < names.size(); i++) {
+				if(runwayName.equals(names.get(i))) {
+					dup = true;
+				}
+			}
+			if(dup == false) {
+				Runway runway = new Runway(runwayName);
+				airport.enqueue(runway);
+				names.add(names.size(), runwayName);
+				added = true;
+			}
+			else {
+				System.out.println("Runway name alreay exists, try a different name");
+				runwayName = stdin.readLine();
+			}
+		}
+		
+	}
 	public static void five() {}
 	public static void six() {}
 	public static void seven() {}
