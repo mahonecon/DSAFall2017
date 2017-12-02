@@ -22,5 +22,8 @@ public class Plane {
 	public String getRunway() {
 		return runway;
 	}
+	public void setRunway(String newRunway) {
+		runway = newRunway;
+	}
 
 }
