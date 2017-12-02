@@ -74,72 +74,70 @@ public class Driver {
     }//end main
 
     public static void one() throws IOException {
-		System.out.println("Enter the flight number for the new plane");
-		int fnum = Integer.valueOf(stdin.readLine());
-		boolean check = false;
-		boolean hasNum = false;
-		while(hasNum == false) {
-			for(int n = 0; n< numbers.size(); n++) {
-				if(fnum == numbers.get(n)) {
-					check = true;
-				}
-			}
-			if(check == false) {
-				hasNum = true;
-			}
-			else{
-				System.out.println("Try a new number");
-				fnum = Integer.valueOf(stdin.readLine());
-			}
-		}
-		System.out.println("Enter runway name");
-		String rName = stdin.readLine();
-		boolean ar = false;
-		boolean real = false;
-		while(ar== false) {
-			for(int m =0; m < names.size(); m++) {
-				if(rName.equals(names.get(m))== true) {
-					real = true;
-				}
-				if(real == true) {
-					ar = true;
-				}
-				else {
-					System.out.println("That runway is not open, try a new one");
-					rName = stdin.readLine();
-				}
-			}
-		}
-		System.out.println("Please enter the destination: ");
-		String des = stdin.readLine();
-		Plane plane = new Plane(fnum,des,rName);
-		for(int ap =0; ap< airport.size(); ap++) {
-			if(plane.getRunway().equals(airport.get(ap))) {
-				airport.get(ap).enqueue(plane);
-			}
-		}
-	}
+        System.out.println("Enter the flight number for the new plane");
+        int fnum = Integer.valueOf(stdin.readLine());
+        boolean check = false;
+        boolean hasNum = false;
+        while (hasNum == false) {
+            for (int n = 0; n < numbers.size(); n++) {
+                if (fnum == numbers.get(n)) {
+                    check = true;
+                }
+            }
+            if (check == false) {
+                hasNum = true;
+            } else {
+                System.out.println("Try a new number");
+                fnum = Integer.valueOf(stdin.readLine());
+            }
+        }
+        System.out.println("Enter runway name");
+        String rName = stdin.readLine();
+        boolean ar = false;
+        boolean real = false;
+        while (ar == false) {
+            for (int m = 0; m < names.size(); m++) {
+                if (rName.equals(names.get(m)) == true) {
+                    real = true;
+                }
+                if (real == true) {
+                    ar = true;
+                } else {
+                    System.out.println("That runway is not open, try a new one");
+                    rName = stdin.readLine();
+                }
+            }
+        }
+        System.out.println("Please enter the destination: ");
+        String des = stdin.readLine();
+        Plane plane = new Plane(fnum, des, rName);
+        for (int ap = 0; ap < airport.size(); ap++) {
+            if (plane.getRunway().equals(airport.get(ap))) {
+                airport.get(ap).enqueue(plane);
+            }
+        }
+    }
 
     public static void two() {
         int takeOffAttempts = 0;
         boolean takeOff = false;
         Runway run;
-        while(takeOff == false || takeOffAttempts != airport.size() - 1) {
-            if(runwayCounter == airport.size()) {
+        while (takeOff == false || takeOffAttempts != airport.size() - 1) {
+            if (runwayCounter == airport.size()) {
                 runwayCounter = 0;
             }
             run = airport.get(runwayCounter);
-            try{
-                Plane p = (Plane)run.dequeue();
+            try {
+                Plane p = (Plane) run.dequeue();
                 System.out.println("Plane with Flight number: " + p.getFlightNumber() + " has taken off from Runway " + run.getName());
                 runwayCounter++;
                 takeOff = true;
-            } catch(QueueException q) {
+            } catch (QueueException q) {
                 runwayCounter++;
                 takeOffAttempts++;
             }
         }
-        if(takeOffAttempts == airport.size() - 1) {
+        if (takeOffAttempts == airport.size() - 1) {
             System.out.println("No planes currently cleared for take-off!");
         }
     }
