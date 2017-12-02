@@ -252,7 +252,21 @@ public class Driver {
                             Runway r2 = airport.get(j);
                             if (r2.getName().equals(newRun)) {
                                 System.out.println("Flight " + p.getFlightNumber() + " is now awaiting takeoff at runway " + str);
+                                r2.enqueue(p);
+                                j = airport.size();
                             }
+                        }
+                    }
+                    for(int k = 0; k < planes.size(); k++) {
+                        Plane p2 = planes.get(k);
+                        if(p2.getRunway().equals(str)) {
+                            System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
+                            newRun = stdin.readLine().toUpperCase();
+                            System.out.print(newRun + "/n");
+                            while(newRun.equals(str)) {
+                                System.out.println("This is the runway that is closing");
+                            }
+                            
                         }
                     }
                     closed = true;
@@ -279,7 +293,14 @@ public class Driver {
     public static void seven() {
     }
 
-    public static void eight() {
+    public static int getRunwayIndex(String str) {
+        for(int i = 0; i < airport.size(); i++) {
+            Runway r = airport.get(i);
+            if(r.getName().equals(str)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
 }
