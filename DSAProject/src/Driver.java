@@ -131,7 +131,7 @@ public class Driver {
                 Plane p = (Plane) run.dequeue();
                 System.out.println("Allow Plane with Flight number " + p.getFlightNumber() + " to take off from Runway " + run.getName() + "? (Y/N)");
                 String str = stdin.readLine().toUpperCase();
-                if(str.equals("Y")) {
+                if (str.equals("Y")) {
                     System.out.println("Plane with Flight number: " + p.getFlightNumber() + " has taken off from Runway " + run.getName());
                     takeOff = true;
                 } else {
