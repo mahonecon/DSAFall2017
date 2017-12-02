@@ -228,54 +228,38 @@ public class Driver {
 
     //@author Conor Mahoney
     public static void five() throws IOException {
-        boolean closed = false;
-        boolean found = false;
         String str = "";
         String newRun = "";
-        while (!closed) {
-            System.out.print("Enter runway: ");
+        System.out.print("Enter runway: ");
+        str = stdin.readLine().toUpperCase();
+        System.out.print(str + "/n");
+        int index = getRunwayIndex(str);
+        while (index == -1) {
+            System.out.print("Runway does not exist! Pick another runway: ");
             str = stdin.readLine().toUpperCase();
             System.out.print(str + "/n");
-            for (int i = 0; i < airport.size(); i++) {
-                Runway r = airport.get(i);
-                if (r.getName().equals(str)) {
-                    found = true;
-                    while (!r.isEmpty()) {
-                        Plane p = (Plane) r.dequeue();
-                        System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
-                        newRun = stdin.readLine().toUpperCase();
-                        System.out.print(newRun + "/n");
-                        while (newRun.equals(str)) {
-                            System.out.println("This is the runway that is closing!");
-                        }
-                        for (int j = 0; j < airport.size(); i++) {
-                            Runway r2 = airport.get(j);
-                            if (r2.getName().equals(newRun)) {
-                                System.out.println("Flight " + p.getFlightNumber() + " is now awaiting takeoff at runway " + str);
-                                r2.enqueue(p);
-                                j = airport.size();
-                            }
-                        }
-                    }
-                    for(int k = 0; k < planes.size(); k++) {
-                        Plane p2 = planes.get(k);
-                        if(p2.getRunway().equals(str)) {
-                            System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
-                            newRun = stdin.readLine().toUpperCase();
-                            System.out.print(newRun + "/n");
-                            while(newRun.equals(str)) {
-                                System.out.println("This is the runway that is closing");
-                            }
-                            
-                        }
-                    }
-                    closed = true;
-                    i = airport.size();
-                }
+            index = getRunwayIndex(str);
+        }
+        Runway r = airport.get(index);
+        while (!r.isEmpty()) {
+            Plane p = (Plane) r.dequeue();
+            System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
+            newRun = stdin.readLine().toUpperCase();
+            System.out.print(newRun + "/n");
+            int index2 = getRunwayIndex(newRun);
+            while (index2 == -1) {
+                System.out.print("Runway does not exist! Pick another runway: ");
+                newRun = stdin.readLine().toUpperCase();
+                System.out.print(newRun + "/n");
+                index2 = getRunwayIndex(newRun);
             }
-            if (!found) {
-                System.out.println("No such runway!");
+            while(index2 == index) {
+                System.out.println("That is the Runway that is closing! Pick another runway: ");
+                newRun = stdin.readLine().toUpperCase();
+                System.out.print(newRun + "/n");
+                index2 = getRunwayIndex(newRun);
             }
+            
         }
         System.out.println("Runway " + str + " has been closed");
     }
@@ -294,9 +278,10 @@ public class Driver {
     }
 
     public static int getRunwayIndex(String str) {
-        for(int i = 0; i < airport.size(); i++) {
+        str = str.toUpperCase();
+        for (int i = 0; i < airport.size(); i++) {
             Runway r = airport.get(i);
-            if(r.getName().equals(str)) {
+            if (r.getName().equals(str)) {
                 return i;
             }
         }
