@@ -228,7 +228,28 @@ public class Driver {
 
     }//end four
 
-    public static void five() {
+    public static void five() throws IOException {
+        boolean closed = false;
+        boolean found = false;
+        String str = "";
+        while(!closed) {
+            System.out.print("Enter runway: ");
+            str = stdin.readLine().toUpperCase();
+            System.out.print(str + "/n");
+            for(int i = 0; i < airport.size(); i++) {
+                Runway r = airport.get(i);
+                if(r.getName().equals(str)) {
+                    found = true;
+                    ListArrayBasedPlus<Plane> temp = new ListArrayBasedPlus<Plane>();
+                    
+                    closed = true;
+                }
+            }
+            if(!found) {
+                System.out.println("No such runway!");
+            }
+        }
+        System.out.println("Runway " + str + " has been closed");
     }
 
     //@author Nic La Sala
