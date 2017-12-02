@@ -43,7 +43,7 @@ public class Queue<T> implements QueueInterface<T> {
 
 	public T dequeue() throws QueueException {
 		if (numItems == 0) {
-			throw new QueueException("Stack is already empty");
+			throw new QueueException("Queue is already empty");
 		} else {
 			T result = queue[front];
 			queue[front] = null;
@@ -62,7 +62,7 @@ public class Queue<T> implements QueueInterface<T> {
 
 	public T peek() throws QueueException {
 		if (numItems == 0) {
-			throw new QueueException("Stack is already empty");
+			throw new QueueException("Queue is already empty");
 		} else {
 			return queue[front];
 		}
