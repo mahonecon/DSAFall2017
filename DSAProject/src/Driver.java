@@ -100,7 +100,7 @@ public class Driver {
             }
             if (dup == false) {
                 Runway runway = new Runway(runwayName);
-                airport.enqueue(runway);
+                airport.add(airport.size(), runway);
                 names.add(names.size(), runwayName);
                 added = true;
             } else {
