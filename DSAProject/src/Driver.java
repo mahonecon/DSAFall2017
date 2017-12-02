@@ -17,6 +17,7 @@ public class Driver {
                 for(int i = 0; i < numRunways; i++) {
                     System.out.print("Name of Runway " + (i+1) + ": ");
                     String str = stdin.readLine();
+		    str = str.toUpperCase();
                     Runway run = new Runway(str);
                     names.add(names.size(), str);
                     airport.enqueue(run);
