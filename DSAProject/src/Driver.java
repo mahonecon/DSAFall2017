@@ -4,7 +4,7 @@ import java.io.*;
 public class Driver {
 
     public static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
-    public static ListArrayBasedPlus<Runway> airport = new ListArrayBasedPlus<Runway>();
+    public static ListArrayBasedPlus<Runway<Plane>> airport = new ListArrayBasedPlus<Runway<Plane>>();
     public static ListArrayBasedPlus<Plane> planes = new ListArrayBasedPlus<Plane>();
     public static ListArrayBasedPlus<String> names = new ListArrayBasedPlus<String>();
     public static ListArrayBasedPlus<Integer> numbers = new ListArrayBasedPlus<Integer>();
@@ -77,6 +77,27 @@ public class Driver {
     }
 
     public static void two() {
+        int takeOffAttempts = 0;
+        boolean takeOff = false;
+        Runway run;
+        while(takeOff == false || takeOffAttempts != airport.size() - 1) {
+            if(runwayCounter == airport.size()) {
+                runwayCounter = 0;
+            }
+            run = airport.get(runwayCounter);
+            try{
+                Plane p = (Plane)run.dequeue();
+                System.out.println("Plane with Flight number: " + p.getFlightNumber() + " has taken off from Runway " + run.getName());
+                runwayCounter++;
+                takeOff = true;
+            } catch(QueueException q) {
+                runwayCounter++;
+                takeOffAttempts++;
+            }
+        }
+        if(takeOffAttempts == airport.size() - 1) {
+            System.out.println("No planes currently cleared for take-off!");
+        }
     }
 
     public static void three() {
