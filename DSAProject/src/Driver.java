@@ -68,7 +68,7 @@ public class Driver {
                     break;
 
                 case 8:
-                    eight();
+                    System.out.println("Number of takeoffs from this airport: " + takeOffs);
                     break;
 
             } //end switch
