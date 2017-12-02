@@ -1,3 +1,12 @@
+/*
+ * Purpose: Data Structure and Algorithms Midterm
+ * Status: Complete and thoroughly tested
+ * Last update: 10/18/17
+ * Submitted: 10/18/2017
+ * Comment: test suite and sample run attached
+ * @author: Conor J. Mahoney
+ * @version: 2017.10.18
+ */
 public class ListArrayBasedPlus<T> extends ListArrayBased<T> {
 
     public ListArrayBasedPlus() {
