@@ -74,7 +74,8 @@ public class Driver {
             } //end switch
         }//end while
     }//end main
-
+    
+    //@author Nick LaSala
     public static void one() throws IOException {
         System.out.println("Enter the flight number for the new plane");
         int fnum = Integer.valueOf(stdin.readLine());
@@ -120,6 +121,7 @@ public class Driver {
         }
     }
 
+    //@author Conor Mahoney
     public static void two() throws IOException {
         int takeOffAttempts = 0;
         boolean takeOff = false;
@@ -154,10 +156,10 @@ public class Driver {
             System.out.println("No plane on any runway!");
         }
     }
-
+    //@author Nick LaSala
     public static void three() {
     }
-
+    //@author Nick LaSala
     public static void four() throws IOException {
         System.out.println("Enter the name of runway number " + (airport.size() + 1) + ": ");
         String runwayName = stdin.readLine();
