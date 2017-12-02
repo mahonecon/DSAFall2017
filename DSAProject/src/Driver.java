@@ -15,6 +15,7 @@ public class Driver {
 
         int code = 0;
 
+        System.out.println("Welcome to your new & improved Airport management program!");
         System.out.println("Please enter the number of runways at the airport: ");
         int numRunways = Integer.valueOf(stdin.readLine());
         for (int i = 0; i < numRunways; i++) { //For the specified number of runways
@@ -128,7 +129,6 @@ public class Driver {
                 runwayCounter = 0;
             }//end if
             run = airport.get(runwayCounter); //assign temporary runway value to airport.get(runwayCounter)
-            airport.remove(runwayCounter);
             try {
                 Plane p = (Plane) run.dequeue();
                 System.out.println("Allow Plane with Flight number " + p.getFlightNumber() + " to take off from Runway " + run.getName() + "? (Y/N)");
@@ -142,7 +142,8 @@ public class Driver {
                     System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
                     takeOffAttempts++;
                 }
-                airport.add(runwayCounter, run);
+                airport.remove(runwayCounter); //Remove temp runway from airport
+                airport.add(runwayCounter, run); //add modified runway back to airport at the same position it was removed from.
                 runwayCounter++;
             } catch (QueueException q) {
                 runwayCounter++;
