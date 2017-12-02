@@ -4,8 +4,9 @@ public class Driver {
 
 	public static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
 	public static Queue<Runway> airport = new Queue<Runway>();
-	public static ListArrayBasedPlus planes = new ListArrayBasedPlus();
-	public static ListArrayBasedPlus names = new ListArrayBasedPlus();
+	public static ListArrayBasedPlus<Plane> planes = new ListArrayBasedPlus<Plane>();
+	public static ListArrayBasedPlus<String> names = new ListArrayBasedPlus<String>();
+        public static ListArrayBasedPlus<Integer> numbers = new ListArrayBasedPlus<Integer>();
 	
 	public static void main(String[] args) throws IOException {
 		
