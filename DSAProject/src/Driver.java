@@ -16,14 +16,9 @@ public class Driver {
 
         System.out.println("Please enter the number of runways at the airport: ");
         int numRunways = Integer.valueOf(stdin.readLine());
-        for (int i = 0; i < numRunways; i++) {
-            System.out.print("Name of Runway " + (i + 1) + ": ");
-            String str = stdin.readLine();
-            str = str.toUpperCase();
-            Runway run = new Runway(str);
-            names.add(names.size(), str);
-            airport.add(airport.size(), run);
-        }
+        for (int i = 0; i < numRunways; i++) { //For the specified number of runways
+            four(); //calls the method for adding Runways
+        }//end for
 
         while (code != 9) {
             System.out.println("Menu! Input number to reach menu option!");
@@ -97,7 +92,7 @@ public class Driver {
                 if (runwayName.equals(names.get(i))) {
                     dup = true;
                 }
-            }
+            }//end for
             if (dup == false) {
                 Runway runway = new Runway(runwayName);
                 airport.add(airport.size(), runway);
@@ -106,10 +101,10 @@ public class Driver {
             } else {
                 System.out.println("Runway name alreay exists, try a different name");
                 runwayName = stdin.readLine();
-            }
-        }
+            }//end if/else
+        } //end while
 
-    }
+    }//end four
 
     public static void five() {
     }
