@@ -1,15 +1,15 @@
 public class Plane {
-	protected int flightNumber;
+	protected String flightNumber;
 	protected String destination;
 	protected String runway;
 
-	public Plane(int flightNumber, String destination, String runway) {
+	public Plane(String flightNumber, String destination, String runway) {
 		this.flightNumber = flightNumber;
 		this.destination = destination;
 		this.runway = runway;
 	}
 
-	public int getFlightNumber() {
+	public String getFlightNumber() {
 		return flightNumber;
 	}
 
