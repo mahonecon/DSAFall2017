@@ -321,7 +321,7 @@ public class Driver {
             System.out.println("There are no planes awaiting re-entry");
         } else {
             System.out.println("These planes are awaiting re-entry");
-            for (int s = 0; s < airport.size(); s++) {
+            for (int s = 0; s < planes.size(); s++) {
                 if (planes.get(s) != null) {
                     System.out.println("Flight: " + planes.get(s).getFlightNumber() + " to" + planes.get(s).getDestination());
                 }
