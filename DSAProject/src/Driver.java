@@ -18,7 +18,7 @@ public class Driver {
     public static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));			//Instance of buffered reader to take user inputs, used for all inputs taken during runtime
     public static ListArrayBasedPlus<Runway<Plane>> airport = new ListArrayBasedPlus<Runway<Plane>>();	//Instance resizable list ADT to store open runways at the airport
     public static ListArrayBasedPlus<Plane> planes = new ListArrayBasedPlus<Plane>();					//Instance resizable list ADT used as a plane lot for planes not cleared to take-off
-    public static ListArrayBasedPlus<String> names = new ListArrayBasedPlus<String>();					//Instance resizable list ADT to store the names of every runway open
+    //public static ListArrayBasedPlus<String> names = new ListArrayBasedPlus<String>();					//Instance resizable list ADT to store the names of every runway open
     public static ListArrayBasedPlus<String> numbers = new ListArrayBasedPlus<String>();				//Instance resizable list ADT to store the flight number of every plane at the airport
     
     // static global variables.
