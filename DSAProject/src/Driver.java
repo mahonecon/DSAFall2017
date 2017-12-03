@@ -68,13 +68,13 @@ public class Driver {
                     break;
 
                 case 8:
-                	System.out.println( takeOffs+ " planes have taken off ");
+                    System.out.println(takeOffs + " planes have taken off ");
                     break;
 
             } //end switch
         }//end while
     }//end main
-    
+
     //@author Nick LaSala
     public static void one() throws IOException {
         System.out.println("Enter the flight number for the new plane");
@@ -83,7 +83,7 @@ public class Driver {
         boolean hasNum = false;
         while (hasNum == false) {
             for (int n = 0; n < numbers.size(); n++) {
-                if (fnum.equals(numbers.get(n)) ){
+                if (fnum.equals(numbers.get(n))) {
                     check = true;
                 }
             }
@@ -131,86 +131,84 @@ public class Driver {
         int takeOffAttempts = 0;
         boolean takeOff = false;
         Runway run;
-        if(airportEmpty()== true) {
-        	System.out.println("There are no planes at the airport!");
-        }
-        else {
-        	while (takeOff == false || takeOffAttempts != airport.size() - 1) {
-        		if (runwayCounter == airport.size()) { //if runwayCounter hits the last runway in the list, start from 0.
-        			runwayCounter = 0;
-            }//end if
-            run = airport.get(runwayCounter); //assign temporary runway value to airport.get(runwayCounter)
-            try {
-                Plane p = (Plane) run.dequeue();
-                System.out.println("Allow Plane with Flight number " + p.getFlightNumber() + " to take off from Runway " + run.getName() + "? (Y/N)");
-                String str = stdin.readLine().toUpperCase();
-                if (str.equals("Y")) {
-                    System.out.println("Plane with Flight number: " + p.getFlightNumber() + " has taken off from Runway " + run.getName());
-                    takeOffs++;
-                    takeOff = true;
-                } else {
-               		planes.add(planes.size(), p);
-                    System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
+        if (airportEmpty() == true) {
+            System.out.println("There are no planes at the airport!");
+        } else {
+            while (takeOff == false || takeOffAttempts != airport.size() - 1) {
+                if (runwayCounter == airport.size()) { //if runwayCounter hits the last runway in the list, start from 0.
+                    runwayCounter = 0;
+                }//end if
+                run = airport.get(runwayCounter); //assign temporary runway value to airport.get(runwayCounter)
+                try {
+                    Plane p = (Plane) run.dequeue();
+                    System.out.println("Allow Plane with Flight number " + p.getFlightNumber() + " to take off from Runway " + run.getName() + "? (Y/N)");
+                    String str = stdin.readLine().toUpperCase();
+                    if (str.equals("Y")) {
+                        System.out.println("Plane with Flight number: " + p.getFlightNumber() + " has taken off from Runway " + run.getName());
+                        takeOffs++;
+                        takeOff = true;
+                    } else {
+                        planes.add(planes.size(), p);
+                        System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
+                        takeOffAttempts++;
+                    }
+                    airport.remove(runwayCounter); //Remove temp runway from airport
+                    airport.add(runwayCounter, run); //add modified runway back to airport at the same position it was removed from.
+                    runwayCounter++;
+                } catch (QueueException q) {
+                    runwayCounter++;
                     takeOffAttempts++;
                 }
-                airport.remove(runwayCounter); //Remove temp runway from airport
-                airport.add(runwayCounter, run); //add modified runway back to airport at the same position it was removed from.
-                runwayCounter++;
-            	} catch (QueueException q) {
-            		runwayCounter++;
-                	takeOffAttempts++;
-            	}
-        	}
-        	if (takeOffAttempts == airport.size() - 1) {
-            	System.out.println("No plane on any runway!");
-        	}
+            }
+            if (takeOffAttempts == airport.size() - 1) {
+                System.out.println("No plane on any runway!");
+            }
         }
     }
-    //@author Nick LaSala
-	public static void three() throws IOException {
 
-		if(planes.isEmpty() == true) {
-			System.out.println("No Planes are awaiting re-entry!");
-		}
-		else {
-			System.out.println("Please enter flight number for plane re-entering runway");
-			String rnum = stdin.readLine();
-			boolean realNum = false; 
-			boolean op = false;
-			int pos = 0;
-			int run =0;
-			boolean reAdded = false;
-			while(reAdded == false) {
-				for(int e = 0; e < planes.size(); e++) {
-					if(rnum.equals(planes.get(e).getFlightNumber())) {
-						pos = e;
-						realNum = true;
-					}
-				}
-				if(realNum == true) {
-					for(int ro =0; ro < airport.size();ro++) {
-						if(planes.get(pos).getRunway().equals(airport.get(ro).getName())) {
-							run = ro;
-							op = true;
-						}
-					}
-					if(op == true) {
-						airport.get(run).enqueue(planes.get(pos));
-						System.out.println("Plane number: " + rnum+" has re-entered.");
-						reAdded = true;
-					}
-					else{
-						System.out.println("That plane's runway has closed, try another");
-						rnum = stdin.readLine();
-					}
-				}
-				else {
-					System.out.println("That plane's is not awaiting re-entry, try another");
-					rnum = stdin.readLine();
-				}
-			}
-		}
-	}
+    //@author Nick LaSala
+    public static void three() throws IOException {
+
+        if (planes.isEmpty() == true) {
+            System.out.println("No Planes are awaiting re-entry!");
+        } else {
+            System.out.println("Please enter flight number for plane re-entering runway");
+            String rnum = stdin.readLine();
+            boolean realNum = false;
+            boolean op = false;
+            int pos = 0;
+            int run = 0;
+            boolean reAdded = false;
+            while (reAdded == false) {
+                for (int e = 0; e < planes.size(); e++) {
+                    if (rnum.equals(planes.get(e).getFlightNumber())) {
+                        pos = e;
+                        realNum = true;
+                    }
+                }
+                if (realNum == true) {
+                    for (int ro = 0; ro < airport.size(); ro++) {
+                        if (planes.get(pos).getRunway().equals(airport.get(ro).getName())) {
+                            run = ro;
+                            op = true;
+                        }
+                    }
+                    if (op == true) {
+                        airport.get(run).enqueue(planes.get(pos));
+                        System.out.println("Plane number: " + rnum + " has re-entered.");
+                        reAdded = true;
+                    } else {
+                        System.out.println("That plane's runway has closed, try another");
+                        rnum = stdin.readLine();
+                    }
+                } else {
+                    System.out.println("That plane's is not awaiting re-entry, try another");
+                    rnum = stdin.readLine();
+                }
+            }
+        }
+    }
+
     //@author Nick LaSala
     public static void four() throws IOException {
         System.out.println("Enter the name of runway number " + (airport.size() + 1) + ": ");
@@ -237,57 +235,118 @@ public class Driver {
 
     }//end four
 
+    //@author Conor Mahoney
     public static void five() throws IOException {
- 
+        String str;
+        String newRun;
+        Plane p;
+        int index;
+        int index2;
+        int counter = 0;
+
+        System.out.print("Enter runway: ");
+        str = stdin.readLine().toUpperCase();
+        System.out.print(str + "/n");
+        index = getRunwayIndex(str);
+
+        while (index == -1) { //If the runway does not exist, notify user and continue requesting new runways until given a runway that exists.
+            System.out.print("Runway does not exist! Pick another runway: ");
+            str = stdin.readLine().toUpperCase();
+            System.out.print(str + "/n");
+            index = getRunwayIndex(str);
+        }
+
+        Runway r = airport.get(index); //Set Runway = confirmed existent runway located at index
+
+        while (!r.isEmpty()) {
+            p = (Plane) r.dequeue();
+            System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
+            newRun = stdin.readLine().toUpperCase();
+            System.out.print(newRun + "/n");
+            index2 = getRunwayIndex(newRun);
+
+            while (index2 == -1 || index2 == index) { //Check that Runway both exists, and is not the runway that is being closed.
+                System.out.print("Runway does not exist or is the sames as the Runway that is closing! Pick another runway: ");
+                newRun = stdin.readLine().toUpperCase();
+                System.out.print(newRun + "/n");
+                index2 = getRunwayIndex(newRun);
+            }
+
+            airport.get(index2).enqueue(p);
+            System.out.println("Flight " + p.getFlightNumber() + " is awaiting takeoff at Runway " + airport.get(index2).getName());
+            counter++;
+        }
+
+        for (int i = 0; i < planes.size(); i++) {
+
+            if (index == getRunwayIndex(planes.get(i).getRunway())) {
+                p = planes.get(i);
+                System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
+                newRun = stdin.readLine().toUpperCase();
+                System.out.print(newRun + "/n");
+                index2 = getRunwayIndex(newRun);
+
+                while (index2 == -1 || index2 == index) {
+                    System.out.print("Runway does not exist or is the same as the Runway that is closing! Pick another runway: ");
+                    newRun = stdin.readLine().toUpperCase();
+                    System.out.print(newRun + "/n");
+                    index2 = getRunwayIndex(newRun);
+                }
+
+                p.setRunway(newRun);
+                System.out.println("Flight " + p.getFlightNumber() + " has been assigned a new runway, and is now awaiting re-entry to Runway " + newRun);
+                counter++;
+            }
+        }
+        System.out.println("Runway " + str + " has been closed. " + counter + " Flights were transferred to new Runways.");
     }
+
     // Nic La Sala
     public static void six() {
-    	if(airportEmpty() == true) {
-    		System.out.println("There are no planes at the airport");
-    	}
-    	else {
-    		System.out.println("These planes are awaiting take-off");
-    		for(int s = 0; s < airport.size();s++) {
-    			if(airport.get(s).isEmpty() == false) {
-    				System.out.println("Flight: "+ airport.get(s).peek().getFlightNumber() +" to " + airport.get(s).peek().getDestination());
-    			}
-    		}
-    	}
-    	
+        if (airportEmpty() == true) {
+            System.out.println("There are no planes at the airport");
+        } else {
+            System.out.println("These planes are awaiting take-off");
+            for (int s = 0; s < airport.size(); s++) {
+                if (airport.get(s).isEmpty() == false) {
+                    System.out.println("Flight: " + airport.get(s).peek().getFlightNumber() + " to " + airport.get(s).peek().getDestination());
+                }
+            }
+        }
+
     }
 
     public static void seven() {
-    	if(planes.isEmpty() == true) {
-    		System.out.println("There are no planes awaiting re-entry");
-    	}
-    	else {
-    		System.out.println("These planes are awaiting re-entry");
-    		for(int s = 0; s < airport.size();s++) {
-    			if(planes.get(s)!= null) {
-    				System.out.println("Flight: "+ planes.get(s).getFlightNumber() +" to" + planes.get(s).getDestination());
-    			}
-    		}
-    	}
+        if (planes.isEmpty() == true) {
+            System.out.println("There are no planes awaiting re-entry");
+        } else {
+            System.out.println("These planes are awaiting re-entry");
+            for (int s = 0; s < airport.size(); s++) {
+                if (planes.get(s) != null) {
+                    System.out.println("Flight: " + planes.get(s).getFlightNumber() + " to" + planes.get(s).getDestination());
+                }
+            }
+        }
     }
+
     public static int getRunwayIndex(String str) {
-        for(int i = 0; i < airport.size(); i++) {
+        for (int i = 0; i < airport.size(); i++) {
             Runway r = airport.get(i);
-            if(r.getName().equals(str)) {
+            if (r.getName().equals(str)) {
                 return i;
             }
         }
         return -1;
     }
+
     public static boolean airportEmpty() {
-    	boolean empty =true;
-    	for(int k =0; k < airport.size(); k++) {
-    		if(airport.get(k).isEmpty() == false) {
-    			empty = false;
-    		}
-    	}
-    	return empty;
+        boolean empty = true;
+        for (int k = 0; k < airport.size(); k++) {
+            if (airport.get(k).isEmpty() == false) {
+                empty = false;
+            }
+        }
+        return empty;
     }
-
-
 
 }
