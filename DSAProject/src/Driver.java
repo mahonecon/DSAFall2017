@@ -77,6 +77,9 @@ public class Driver {
     }//end main
 
     //@author Nic LaSala
+	//Nick if you get a chance, change this method to use airport.get(n).getName() instead of using
+	//a names List, and planes.get(m).getFlightNumber() instead of a numbers list. Less ADTs is
+	//much better for our efficiency -CJ
     public static void one() throws IOException {
         System.out.print("Enter the flight number for the new plane: ");
         String fnum = stdin.readLine().toUpperCase();
