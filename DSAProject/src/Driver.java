@@ -129,13 +129,13 @@ public class Driver {
 
     //@author Conor Mahoney
     public static void two() throws IOException {
-        int takeOffAttempts = 0;
+        int emptyRunways = 0;
         boolean takeOff = false;
         Runway run;
         if (airportEmpty()) {
             System.out.println("There are no planes at the airport!");
         } else {
-            while (!takeOff && takeOffAttempts != airport.size() - 1) {
+            while (!takeOff && emptyRunways != airport.size() - 1) {
                 if (runwayCounter == airport.size()) { //if runwayCounter hits the last runway in the list, start from 0.
                     runwayCounter = 0;
                 }//end if
@@ -156,8 +156,7 @@ public class Driver {
                         }
                     } else {
                         planes.add(planes.size(), p);
-                        System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
-                        takeOffAttempts++;
+                        System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");;
                     }//end if/else
                     airport.remove(runwayCounter); //Remove temp runway from airport
                     airport.add(runwayCounter, run); //add modified runway back to airport at the same position it was removed from.
@@ -165,10 +164,10 @@ public class Driver {
                         runwayCounter++;
                     }
                 } catch (QueueException q) {
-                    takeOffAttempts++;
+                    emptyRunways++;
                 }//end try/catch
             }//end while
-            if (takeOffAttempts == airport.size() - 1) {
+            if (emptyRunways == airport.size() - 1) {
                 System.out.println("No plane on any runway!");
             }//end if
         }//end if/else
