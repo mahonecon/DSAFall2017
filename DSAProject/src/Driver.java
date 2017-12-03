@@ -375,5 +375,42 @@ public class Driver {
         }
         return empty;
     }
+	public static void twov2() throws IOException {
+    	if (airportEmpty()) {
+            System.out.println("There are no planes at the airport!");
+        }
+    	else{
+    		int tplane = runwayCounter % airport.size();
+    		boolean toff =false;
+    		while(!toff){
+    			System.out.println("Allow Plane with Flight number " +  airport.get(tplane).peek().getFlightNumber() + " to take off from Runway " + airport.get(tplane).getName() + "? (Y/N)");
+    			String choice =stdin.readLine().toUpperCase();
+    			if(choice.equals("Y")){
+    				System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + " has taken off from Runway " + airport.get(tplane).getName());
+    				takeOffs++;
+    				runwayCounter++;
+                    for(int j = 0; j < numbers.size(); j++) {
+                        if(airport.get(tplane).peek().getFlightNumber().equals(numbers.get(j))) {
+                            numbers.remove(j);
+                        }
+                    }
+    				airport.get(tplane).dequeue();
+    				toff = true;
+
+    			}
+    			else if(choice.equals("N")){
+    				System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + "  denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
+    				planes.add(planes.size(), airport.get(tplane).peek());
+    				airport.get(tplane).dequeue();
+    				runwayCounter++;
+    				toff = true;
+    			}
+    			else{
+    				System.out.println("invalid entry, try again");
+    				choice =stdin.readLine().toUpperCase();
+    			}
+    		}
+    	}
+    }
 
 }
