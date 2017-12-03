@@ -1,29 +1,44 @@
+/*
+ * Purpose: DSA Project
+ * Status: Complete and tested
+ * Last update: 12/3/17
+ * Submitted:  12/5/17
+ * Comment: This is Driver containing the main method for our project
+ * @author: Nicholas La Sala, CJ Mahoney
+ * @version: 2017.12.03
+ */
 
+//imported primarily for exceptions.
 import java.io.*;
 
+//Class declaration
 public class Driver {
-
-    public static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
-    public static ListArrayBasedPlus<Runway<Plane>> airport = new ListArrayBasedPlus<Runway<Plane>>();
-    public static ListArrayBasedPlus<Plane> planes = new ListArrayBasedPlus<Plane>();
-    public static ListArrayBasedPlus<String> names = new ListArrayBasedPlus<String>();
-    public static ListArrayBasedPlus<String> numbers = new ListArrayBasedPlus<String>();
-    public static int runwayCounter = 0;
-    public static int takeOffs = 0;
+	//Static global fields that will used within the program
+	//No additional classes of these types will be made during the execution of the program
+    public static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));			//Instance of buffered reader to take user inputs, used for all inputs taken during runtime
+    public static ListArrayBasedPlus<Runway<Plane>> airport = new ListArrayBasedPlus<Runway<Plane>>();	//Instance resizable list ADT to store open runways at the airport
+    public static ListArrayBasedPlus<Plane> planes = new ListArrayBasedPlus<Plane>();					//Instance resizable list ADT used as a plane lot for planes not cleared to take-off
+    public static ListArrayBasedPlus<String> names = new ListArrayBasedPlus<String>();					//Instance resizable list ADT to store the names of every runway open
+    public static ListArrayBasedPlus<String> numbers = new ListArrayBasedPlus<String>();				//Instance resizable list ADT to store the flight number of every plane at the airport
+    
+    // static global variables.
+    public static int runwayCounter = 0;	//used for option 2, must be consistent
+    public static int takeOffs = 0;		//used for option 8, must be be consistent
 
     //@author Conor Mahoney
     public static void main(String[] args) throws IOException {
-
+    	//Initialize Menu code
         int code = 0;
-
+        //User selects starting number of runways open at airport
         System.out.println("Welcome to your new & improved Airport management program!");
         System.out.println("Please enter the number of runways at the airport: ");
         int numRunways = Integer.valueOf(stdin.readLine());
         for (int i = 0; i < numRunways; i++) { //For the specified number of runways
             four(); //calls the method for adding Runways
         }//end for
-
+        //
         while (code != 9) {
+        	//This menu will be printed every time the user gets to make a choice
             System.out.println("Menu! Input number to reach menu option!");
             System.out.println("\t" + "1. Plane enters the system.");
             System.out.println("\t" + "2. Plane takes off.");
@@ -37,15 +52,17 @@ public class Driver {
             System.out.print("Make your menu selection now: ");
             code = Integer.valueOf(stdin.readLine());
             System.out.print(code + "\n");
-
+            //End of menu, and user input
             switch (code) {
-
+            //Cases 1-7 call methods that will perform the desired functionality
+            //Case 8 performs its function within the case
+            //Default case allows the user to renter their choice if they enter a number outside the 1-9 range
                 case 1:
                     one();
                     break;
 
                 case 2:
-                    two();
+                    twov2();
                     break;
 
                 case 3:
@@ -69,24 +86,21 @@ public class Driver {
                     break;
 
                 case 8:
-                    System.out.println(takeOffs + " planes have taken off from this airport.");
+                    System.out.println(takeOffs + " planes have taken off ");
                     break;
-		default:
+                default:
                 	System.out.println("Invalid option.");
                 	break;
 
             } //end switch
         }//end while
+        System.out.println("The airport has closed. Good bye!!!");
     }//end main
 
     //@author Nic LaSala
-	//Nick if you get a chance, change this method to use airport.get(n).getName() instead of using
-	//a names List, and planes.get(m).getFlightNumber() instead of a numbers list. Less ADTs is
-	//much better for our efficiency -CJ
     public static void one() throws IOException {
-        System.out.print("Enter the flight number for the new plane: ");
+        System.out.println("Enter the flight number for the new plane");
         String fnum = stdin.readLine().toUpperCase();
-	System.out.print(fnum + "\n");
         boolean check = false;
         boolean hasNum = false;
         while (hasNum == false) {
@@ -98,20 +112,20 @@ public class Driver {
             if (check == false) {
                 hasNum = true;
             } else {
-                System.out.print("Flight number already in use, use another number: ");
+                System.out.println("Try a new number");
                 fnum = stdin.readLine().toUpperCase();
-		System.out.print(fnum + "\n");
                 check = false;
             }
         }
-        System.out.print("Enter runway name: ");
+        System.out.println("Please enter the destination: ");
+        String des = stdin.readLine().toUpperCase();
+        System.out.println("Enter runway name");
         String rName = stdin.readLine().toUpperCase();
-	System.out.print(rName + "\n");
         boolean ar = false;
         boolean real = false;
         while (ar == false) {
-            for (int m = 0; m < names.size(); m++) {
-                if (rName.equals(names.get(m)) == true) {
+            for (int m = 0; m < airport.size(); m++) {
+                if (rName.equals(airport.get(m).getName()) == true) {
                     real = true;
                 }
 
@@ -119,15 +133,12 @@ public class Driver {
             if (real == true) {
                 ar = true;
             } else {
-                System.out.print("That runway is not open, try a new one: ");
+                System.out.println("That runway is not open, try a new one");
                 rName = stdin.readLine().toUpperCase();
-		System.out.print(rName + "\n");
                 real = false;
             }
         }
-        System.out.print("Please enter the destination: ");
-        String des = stdin.readLine().toUpperCase();
-	System.out.print(des + "\n");
+        
         Plane plane = new Plane(fnum, des, rName);
         numbers.add(numbers.size(), fnum);
         for (int ap = 0; ap < airport.size(); ap++) {
@@ -145,7 +156,8 @@ public class Driver {
         Runway run;
         if (airportEmpty()) {
             System.out.println("There are no planes at the airport!");
-        } else {
+        } 
+        else {
             while (!takeOff && emptyRunways != airport.size() - 1) {
                 if (runwayCounter == airport.size()) { //if runwayCounter hits the last runway in the list, start from 0.
                     runwayCounter = 0;
@@ -236,15 +248,15 @@ public class Driver {
         boolean dup = false;
         boolean added = false;
         while (!added) {
-            for (int i = 0; i < names.size(); i++) {
-                if (runwayName.equals(names.get(i))) {
+            for (int i = 0; i < airport.size(); i++) {
+                if (runwayName.equals(airport.get(i).getName())) {
                     dup = true;
                 }
             }//end for
             if (!dup) {
                 Runway runway = new Runway(runwayName);
                 airport.add(airport.size(), runway);
-                names.add(names.size(), runwayName);
+                //names.add(names.size(), runwayName);
                 added = true;
             } else {
                 System.out.println("Runway name alreay exists, try a different name");
@@ -323,8 +335,8 @@ public class Driver {
             if(names.get(j).equals(str)) {
                 names.remove(j);
                 j = names.size();
-            }//end if
-        }//end for
+            }
+        }
         System.out.println("Runway " + str + " has been closed. " + counter + " Flights were transferred to new Runways.");
     }//end five()
 
@@ -378,7 +390,7 @@ public class Driver {
         }
         return empty;
     }
-	public static void twov2() throws IOException {
+    public static void twov2() throws IOException {
     	if (airportEmpty()) {
             System.out.println("There are no planes at the airport!");
         }
@@ -417,3 +429,4 @@ public class Driver {
     }
 
 }
+
