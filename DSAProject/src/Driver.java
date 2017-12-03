@@ -69,7 +69,7 @@ public class Driver {
                     break;
 
                 case 8:
-                    System.out.println(takeOffs + " planes have taken off ");
+                    System.out.println(takeOffs + " planes have taken off from this airport.");
                     break;
 
             } //end switch
@@ -78,8 +78,9 @@ public class Driver {
 
     //@author Nic LaSala
     public static void one() throws IOException {
-        System.out.println("Enter the flight number for the new plane");
+        System.out.print("Enter the flight number for the new plane: ");
         String fnum = stdin.readLine().toUpperCase();
+	System.out.print(fnum + "\n");
         boolean check = false;
         boolean hasNum = false;
         while (hasNum == false) {
@@ -91,13 +92,15 @@ public class Driver {
             if (check == false) {
                 hasNum = true;
             } else {
-                System.out.println("Try a new number");
+                System.out.print("Flight number already in use, use another number: ");
                 fnum = stdin.readLine().toUpperCase();
+		System.out.print(fnum + "\n");
                 check = false;
             }
         }
-        System.out.println("Enter runway name");
+        System.out.print("Enter runway name: ");
         String rName = stdin.readLine().toUpperCase();
+	System.out.print(rName + "\n");
         boolean ar = false;
         boolean real = false;
         while (ar == false) {
@@ -110,13 +113,15 @@ public class Driver {
             if (real == true) {
                 ar = true;
             } else {
-                System.out.println("That runway is not open, try a new one");
+                System.out.print("That runway is not open, try a new one: ");
                 rName = stdin.readLine().toUpperCase();
+		System.out.print(rName + "\n");
                 real = false;
             }
         }
-        System.out.println("Please enter the destination: ");
+        System.out.print("Please enter the destination: ");
         String des = stdin.readLine().toUpperCase();
+	System.out.print(des + "\n");
         Plane plane = new Plane(fnum, des, rName);
         numbers.add(numbers.size(), fnum);
         for (int ap = 0; ap < airport.size(); ap++) {
@@ -312,8 +317,8 @@ public class Driver {
             if(names.get(j).equals(str)) {
                 names.remove(j);
                 j = names.size();
-            }
-        }
+            }//end if
+        }//end for
         System.out.println("Runway " + str + " has been closed. " + counter + " Flights were transferred to new Runways.");
     }//end five()
 
