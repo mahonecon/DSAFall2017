@@ -68,7 +68,7 @@ public class Driver {
                     break;
 
                 case 8:
-                    System.out.println("Number of takeoffs from this airport: " + takeOffs);
+                    System.out.println( takeOffs+ " planes have taken off ");
                     break;
 
             } //end switch
@@ -76,14 +76,14 @@ public class Driver {
     }//end main
 
     //@author Nic La Sala
-    public static void one() throws IOException {
+        public static void one() throws IOException {
         System.out.println("Enter the flight number for the new plane");
         String fnum = stdin.readLine();
         boolean check = false;
         boolean hasNum = false;
         while (hasNum == false) {
             for (int n = 0; n < numbers.size(); n++) {
-                if (fnum.equals(numbers.get(n))) {
+                if (fnum.equals(numbers.get(n)) ){
                     check = true;
                 }
             }
@@ -92,6 +92,7 @@ public class Driver {
             } else {
                 System.out.println("Try a new number");
                 fnum = stdin.readLine();
+                check = false;
             }
         }
         System.out.println("Enter runway name");
@@ -103,24 +104,27 @@ public class Driver {
                 if (rName.equals(names.get(m)) == true) {
                     real = true;
                 }
-                if (real == true) {
-                    ar = true;
-                } else {
-                    System.out.println("That runway is not open, try a new one");
-                    rName = stdin.readLine();
-                }
+
+            }
+            if (real == true) {
+                ar = true;
+            } else {
+                System.out.println("That runway is not open, try a new one");
+                rName = stdin.readLine();
+                real = false;
             }
         }
         System.out.println("Please enter the destination: ");
         String des = stdin.readLine();
         Plane plane = new Plane(fnum, des, rName);
+        numbers.add(numbers.size(), fnum);
         for (int ap = 0; ap < airport.size(); ap++) {
-            if (plane.getRunway().equals(airport.get(ap))) {
+            if (plane.getRunway().equals(airport.get(ap).getName())) {
                 airport.get(ap).enqueue(plane);
+                airport.get(ap).toString();
             }
         }
     }
-
     //@author Conor Mahoney
     public static void two() throws IOException {
         int takeOffAttempts = 0;
@@ -266,17 +270,33 @@ public class Driver {
 
     //@author Nic La Sala
     public static void six() {
-        System.out.println("These planes are awaiting take-off");
-        for (int s = 0; s < airport.size(); s++) {
-            if (airport.get(s) != null) {
-                System.out.println("Flight: " + airport.get(s).peek().getFlightNumber() + " to" + airport.get(s).peek().getDestination());
-            }
-        }
+    	if(airport.isEmpty() == true) {
+    		System.out.println("There are no planes at the airport");
+    	}
+    	else {
+    		System.out.println("These planes are awaiting take-off");
+    		for(int s = 0; s < airport.size();s++) {
+    			if(airport.get(s).isEmpty() == false) {
+    				System.out.println("Flight: "+ airport.get(s).peek().getFlightNumber() +" to " + airport.get(s).peek().getDestination());
+    			}
+    		}
+    	}
+    	
     }
 
     public static void seven() {
+    	if(planes.isEmpty() == true) {
+    		System.out.println("There are no planes awaiting re-entry");
+    	}
+    	else {
+    		System.out.println("These planes are awaiting re-entry");
+    		for(int s = 0; s < airport.size();s++) {
+    			if(planes.get(s)!= null) {
+    				System.out.println("Flight: "+ planes.get(s).getFlightNumber() +" to" + planes.get(s).getDestination());
+    			}
+    		}
+    	}
     }
-
     public static int getRunwayIndex(String str) {
         str = str.toUpperCase();
         for (int i = 0; i < airport.size(); i++) {
