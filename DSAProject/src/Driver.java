@@ -168,19 +168,22 @@ public class Driver {
      * If plane is denied clearance it is moved to the plane lot
      */
     public static void two() throws IOException {
+    	//checks that plane lot is not empty
     	if (airportEmpty()) {
             System.out.println("There are no planes at the airport!");
         }
     	else{
+    		//decides which plane's turn it is
     		int tplane = runwayCounter % airport.size();
     		boolean toff =false;
     		while(!toff){
     			System.out.println("Allow Plane with Flight number " +  airport.get(tplane).peek().getFlightNumber() + " to take off from Runway " + airport.get(tplane).getName() + "? (Y/N)");
     			String choice =stdin.readLine().toUpperCase();
+    			//Take-off sequence
     			if(choice.equals("Y")){
     				System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + " has taken off from Runway " + airport.get(tplane).getName());
-    				takeOffs++;
-    				runwayCounter++;
+    				takeOffs++;	//adds to the total number of successful take-offs
+    				runwayCounter++;	//ensure that the next time the method id called the next runway is used
                     for(int j = 0; j < numbers.size(); j++) {
                         if(airport.get(tplane).peek().getFlightNumber().equals(numbers.get(j))) {
                             numbers.remove(j);
@@ -190,6 +193,7 @@ public class Driver {
     				toff = true;
 
     			}
+    			//Moves to plane to the plane lot
     			else if(choice.equals("N")){
     				System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + "  denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
     				planes.add(planes.size(), airport.get(tplane).peek());
@@ -197,6 +201,7 @@ public class Driver {
     				runwayCounter++;
     				toff = true;
     			}
+    			//Stays in the loop if the user chooses anything other then yes or no
     			else{
     				System.out.println("invalid entry, try again");
     				choice =stdin.readLine().toUpperCase();
@@ -248,7 +253,7 @@ public class Driver {
                     } else {
                         System.out.println("That plane's runway has closed, try another");
                         rnum = stdin.readLine().toUpperCase();
-                    }
+                    }//end if/else
                     
                 }
                 //if the plane is not found a new number will be requested
@@ -380,35 +385,39 @@ public class Driver {
      * displays planes at the front of each runway
      */
     public static void six() {
+    	//tell the user if there is no planes on the runways
         if (airportEmpty()) {
             System.out.println("There are no planes at the airport");
         } else {
             System.out.println("These planes are awaiting take-off");
+            //Loops through each runway to display the plane ready for takeoff
             for (int s = 0; s < airport.size(); s++) {
                 if (!airport.get(s).isEmpty()) {
                     System.out.println("Flight: " + airport.get(s).peek().getFlightNumber() + " to " + airport.get(s).peek().getDestination());
                 }
-            }
-        }
+            }//end of loop
+        }//end of if/else
 
-    }
+    }//end of six()
     /*
      * @author Nic LaSala
      * method 7()
      * allows for a new plane to enter the system and be placed on a runway 
      */
     public static void seven() {
+    	//Tells the user if there are no planes in the plane lot
         if (planes.isEmpty()) {
             System.out.println("There are no planes awaiting re-entry");
         } else {
             System.out.println("These planes are awaiting re-entry");
+            //loops through the plane lot retrieving each flight number
             for (int s = 0; s < planes.size(); s++) {
                 if (planes.get(s) != null) {
                     System.out.println("Flight: " + planes.get(s).getFlightNumber() + " to " + planes.get(s).getDestination());
                 }
-            }
-        }
-    }
+            }//end for loop
+        }//end if/else
+    }//end of seven()
     /*
      * @author Conor Mahoney
      * method getRunwayIndex()
@@ -492,3 +501,4 @@ public class Driver {
  */ 
 
 }
+
