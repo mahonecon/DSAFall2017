@@ -174,7 +174,7 @@ public class Driver {
             System.out.println("No Planes are awaiting re-entry!");
         } else {
             System.out.println("Please enter flight number for plane re-entering runway");
-            String rnum = stdin.readLine();
+            String rnum = stdin.readLine().toUpperCase();
             boolean realNum = false;
             boolean op = false;
             int pos = 0;
@@ -200,11 +200,11 @@ public class Driver {
                         reAdded = true;
                     } else {
                         System.out.println("That plane's runway has closed, try another");
-                        rnum = stdin.readLine();
+                        rnum = stdin.readLine().toUpperCase();
                     }
                 } else {
                     System.out.println("That plane's is not awaiting re-entry, try another");
-                    rnum = stdin.readLine();
+                    rnum = stdin.readLine().toUpperCase();
                 }
             }
         }
