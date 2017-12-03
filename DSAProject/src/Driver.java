@@ -11,6 +11,7 @@ public class Driver {
     public static int runwayCounter = 0;
     public static int takeOffs = 0;
 
+    //@author Conor Mahoney
     public static void main(String[] args) throws IOException {
 
         int code = 0;
@@ -75,7 +76,7 @@ public class Driver {
         }//end while
     }//end main
 
-    //@author Nick LaSala
+    //@author Nic LaSala
     public static void one() throws IOException {
         System.out.println("Enter the flight number for the new plane");
         String fnum = stdin.readLine();
@@ -166,7 +167,7 @@ public class Driver {
         }
     }
 
-    //@author Nick LaSala
+    //@author Nic LaSala
     public static void three() throws IOException {
 
         if (planes.isEmpty() == true) {
@@ -209,7 +210,7 @@ public class Driver {
         }
     }
 
-    //@author Nick LaSala
+    //@author Nic LaSala
     public static void four() throws IOException {
         System.out.println("Enter the name of runway number " + (airport.size() + 1) + ": ");
         String runwayName = stdin.readLine();
@@ -301,7 +302,7 @@ public class Driver {
         System.out.println("Runway " + str + " has been closed. " + counter + " Flights were transferred to new Runways.");
     }
 
-    // Nic La Sala
+    //@author Nic LaSala
     public static void six() {
         if (airportEmpty() == true) {
             System.out.println("There are no planes at the airport");
@@ -316,6 +317,7 @@ public class Driver {
 
     }
 
+    //@author Nic LaSala
     public static void seven() {
         if (planes.isEmpty() == true) {
             System.out.println("There are no planes awaiting re-entry");
@@ -329,6 +331,7 @@ public class Driver {
         }
     }
 
+    //@author Conor Mahoney
     public static int getRunwayIndex(String str) {
         for (int i = 0; i < airport.size(); i++) {
             Runway r = airport.get(i);
@@ -339,6 +342,7 @@ public class Driver {
         return -1;
     }
 
+    //@author Nic LaSala
     public static boolean airportEmpty() {
         boolean empty = true;
         for (int k = 0; k < airport.size(); k++) {
