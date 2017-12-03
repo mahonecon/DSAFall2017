@@ -79,7 +79,7 @@ public class Driver {
     //@author Nic LaSala
     public static void one() throws IOException {
         System.out.println("Enter the flight number for the new plane");
-        String fnum = stdin.readLine();
+        String fnum = stdin.readLine().toUpperCase();
         boolean check = false;
         boolean hasNum = false;
         while (hasNum == false) {
@@ -92,12 +92,12 @@ public class Driver {
                 hasNum = true;
             } else {
                 System.out.println("Try a new number");
-                fnum = stdin.readLine();
+                fnum = stdin.readLine().toUpperCase();
                 check = false;
             }
         }
         System.out.println("Enter runway name");
-        String rName = stdin.readLine();
+        String rName = stdin.readLine().toUpperCase();
         boolean ar = false;
         boolean real = false;
         while (ar == false) {
@@ -111,12 +111,12 @@ public class Driver {
                 ar = true;
             } else {
                 System.out.println("That runway is not open, try a new one");
-                rName = stdin.readLine();
+                rName = stdin.readLine().toUpperCase();
                 real = false;
             }
         }
         System.out.println("Please enter the destination: ");
-        String des = stdin.readLine();
+        String des = stdin.readLine().toUpperCase();
         Plane plane = new Plane(fnum, des, rName);
         numbers.add(numbers.size(), fnum);
         for (int ap = 0; ap < airport.size(); ap++) {
@@ -248,7 +248,7 @@ public class Driver {
         System.out.print("Enter runway: ");
         str = stdin.readLine().toUpperCase();
         System.out.print(str + "/n");
-        index = getRunwayIndex(str);
+        index = getRunwayIndex(str); //Retrieve index of runway
 
         while (index == -1) { //If the runway does not exist, notify user and continue requesting new runways until given a runway that exists.
             System.out.print("Runway does not exist! Pick another runway: ");
