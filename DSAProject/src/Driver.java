@@ -135,7 +135,7 @@ public class Driver {
         if (airportEmpty() == true) {
             System.out.println("There are no planes at the airport!");
         } else {
-            while (takeOff == false || takeOffAttempts != airport.size() - 1) {
+            while (takeOff == false && takeOffAttempts != airport.size() - 1) {
                 if (runwayCounter == airport.size()) { //if runwayCounter hits the last runway in the list, start from 0.
                     runwayCounter = 0;
                 }//end if
