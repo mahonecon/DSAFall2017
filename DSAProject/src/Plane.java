@@ -21,19 +21,32 @@ public class Plane {
 		this.destination = destination;
 		this.runway = runway;
 	}
-	//@return method returns the flight number as a string
+	/*
+	 * getFlightNumber
+	 * @return method returns the flight number as a string
+	 */
 	public String getFlightNumber() {
 		return flightNumber;
 	}
-	//@return method returns the flight number as a string
+	/*
+	 * getDestination
+	 * @return method returns the flight number as a string
+	 */
 	public String getDestination() {
 		return destination;
 	}
-	//@return method return runway
+	/*
+	 * getRunway
+	 * @return method return runway
+	 */
 	public String getRunway() {
 		return runway;
 	}
-	//@param take new runway and changes the planes designated runway to the runway specifed in the parameter
+	/*
+	 * setRunway
+	 * @param take new runway and changes the planes designated runway to the runway specifed in the parameter
+	 */
+	
 	public void setRunway(String newRunway) {
 		runway = newRunway;
 	}
