@@ -71,6 +71,9 @@ public class Driver {
                 case 8:
                     System.out.println(takeOffs + " planes have taken off from this airport.");
                     break;
+		default:
+                	System.out.println("Invalid option.");
+                	break;
 
             } //end switch
         }//end while
