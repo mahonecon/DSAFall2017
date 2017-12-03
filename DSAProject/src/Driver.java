@@ -155,9 +155,10 @@ public class Driver {
                     }//end if/else
                     airport.remove(runwayCounter); //Remove temp runway from airport
                     airport.add(runwayCounter, run); //add modified runway back to airport at the same position it was removed from.
-                    runwayCounter++;
+                    if(run.isEmpty()) {
+                        runwayCounter++;
+                    }
                 } catch (QueueException q) {
-                    runwayCounter++;
                     takeOffAttempts++;
                 }//end try/catch
             }//end while
