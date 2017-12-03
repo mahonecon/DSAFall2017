@@ -247,13 +247,13 @@ public class Driver {
 
         System.out.print("Enter runway: ");
         str = stdin.readLine().toUpperCase();
-        System.out.print(str + "/n");
+        System.out.print(str + "\n");
         index = getRunwayIndex(str); //Retrieve index of runway
 
         while (index == -1) { //If the runway does not exist, notify user and continue requesting new runways until given a runway that exists.
             System.out.print("Runway does not exist! Pick another runway: ");
             str = stdin.readLine().toUpperCase();
-            System.out.print(str + "/n");
+            System.out.print(str + "\n");
             index = getRunwayIndex(str);
         }//end while
 
@@ -263,13 +263,13 @@ public class Driver {
             p = (Plane) r.dequeue();
             System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
             newRun = stdin.readLine().toUpperCase();
-            System.out.print(newRun + "/n");
+            System.out.print(newRun + "\n");
             index2 = getRunwayIndex(newRun);
 
             while (index2 == -1 || index2 == index) { //Check that Runway both exists, and is not the runway that is being closed.
                 System.out.print("Runway does not exist or is the sames as the Runway that is closing! Pick another runway: ");
                 newRun = stdin.readLine().toUpperCase();
-                System.out.print(newRun + "/n");
+                System.out.print(newRun + "\n");
                 index2 = getRunwayIndex(newRun);
             }//end while
 
@@ -284,13 +284,13 @@ public class Driver {
                 p = planes.get(i);
                 System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
                 newRun = stdin.readLine().toUpperCase();
-                System.out.print(newRun + "/n");
+                System.out.print(newRun + "\n");
                 index2 = getRunwayIndex(newRun);
 
                 while (index2 == -1 || index2 == index) { //Verify newRun
                     System.out.print("Runway does not exist or is the same as the Runway that is closing! Pick another runway: ");
                     newRun = stdin.readLine().toUpperCase();
-                    System.out.print(newRun + "/n");
+                    System.out.print(newRun + "\n");
                     index2 = getRunwayIndex(newRun);
                 }//end while
 
@@ -332,7 +332,7 @@ public class Driver {
     }
 
     //@author Conor Mahoney
-    public static int getRunwayIndex(String str) {
+    private static int getRunwayIndex(String str) {
         for (int i = 0; i < airport.size(); i++) {
             Runway r = airport.get(i);
             if (r.getName().equals(str)) {
@@ -343,7 +343,7 @@ public class Driver {
     }
 
     //@author Nic LaSala
-    public static boolean airportEmpty() {
+    private static boolean airportEmpty() {
         boolean empty = true;
         for (int k = 0; k < airport.size(); k++) {
             if (airport.get(k).isEmpty() == false) {
