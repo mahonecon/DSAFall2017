@@ -156,7 +156,9 @@ public class Driver {
                         }
                     } else {
                         planes.add(planes.size(), p);
-                        System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");;
+                        System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
+                        runwayCounter++;
+                        emptyRunways++;
                     }//end if/else
                     airport.remove(runwayCounter); //Remove temp runway from airport
                     airport.add(runwayCounter, run); //add modified runway back to airport at the same position it was removed from.
