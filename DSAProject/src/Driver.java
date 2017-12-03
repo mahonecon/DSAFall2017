@@ -333,7 +333,9 @@ public class Driver {
                 System.out.println("Flight " + p.getFlightNumber() + " has been assigned a new runway, and is now awaiting re-entry to Runway " + newRun);
                 counter++;
             }//end if
-        }//end for
+        }//end for        
+        
+        //********************REMOVE FOLLOWING COMMENTED CODE IF FIVE() WORKS!*************************************************
 //        for (int j = 0; j < names.size(); j++) {
 //            if (names.get(j).equals(str)) {
 //                names.remove(j);
