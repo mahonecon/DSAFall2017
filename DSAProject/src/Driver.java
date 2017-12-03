@@ -198,6 +198,7 @@ public class Driver {
                         airport.get(run).enqueue(planes.get(pos));
                         System.out.println("Plane number: " + rnum + " has re-entered.");
                         reAdded = true;
+                        planes.remove(pos);
                     } else {
                         System.out.println("That plane's runway has closed, try another");
                         rnum = stdin.readLine().toUpperCase();
@@ -299,6 +300,12 @@ public class Driver {
                 counter++;
             }//end if
         }//end for
+        for(int j = 0; j < names.size(); j++) {
+            if(names.get(j).equals(str)) {
+                names.remove(j);
+                j = names.size();
+            }
+        }
         System.out.println("Runway " + str + " has been closed. " + counter + " Flights were transferred to new Runways.");
     }//end five()
 
