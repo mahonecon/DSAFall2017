@@ -152,20 +152,20 @@ public class Driver {
                         planes.add(planes.size(), p);
                         System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
                         takeOffAttempts++;
-                    }
+                    }//end if/else
                     airport.remove(runwayCounter); //Remove temp runway from airport
                     airport.add(runwayCounter, run); //add modified runway back to airport at the same position it was removed from.
                     runwayCounter++;
                 } catch (QueueException q) {
                     runwayCounter++;
                     takeOffAttempts++;
-                }
-            }
+                }//end try/catch
+            }//end while
             if (takeOffAttempts == airport.size() - 1) {
                 System.out.println("No plane on any runway!");
-            }
-        }
-    }
+            }//end if
+        }//end if/else
+    }//end two()
 
     //@author Nic LaSala
     public static void three() throws IOException {
@@ -213,7 +213,7 @@ public class Driver {
     //@author Nic LaSala
     public static void four() throws IOException {
         System.out.println("Enter the name of runway number " + (airport.size() + 1) + ": ");
-        String runwayName = stdin.readLine();
+        String runwayName = stdin.readLine().toUpperCase();
         boolean dup = false;
         boolean added = false;
         while (added == false) {
@@ -229,7 +229,7 @@ public class Driver {
                 added = true;
             } else {
                 System.out.println("Runway name alreay exists, try a different name");
-                runwayName = stdin.readLine();
+                runwayName = stdin.readLine().toUpperCase();
                 dup = false;
             }//end if/else
         } //end while
@@ -255,11 +255,11 @@ public class Driver {
             str = stdin.readLine().toUpperCase();
             System.out.print(str + "/n");
             index = getRunwayIndex(str);
-        }
+        }//end while
 
         Runway r = airport.get(index); //Set Runway = confirmed existent runway located at index
 
-        while (!r.isEmpty()) {
+        while (!r.isEmpty()) { //While the runway still contains planes awaiting takeoff clearance
             p = (Plane) r.dequeue();
             System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
             newRun = stdin.readLine().toUpperCase();
@@ -271,36 +271,36 @@ public class Driver {
                 newRun = stdin.readLine().toUpperCase();
                 System.out.print(newRun + "/n");
                 index2 = getRunwayIndex(newRun);
-            }
+            }//end while
 
             airport.get(index2).enqueue(p);
             System.out.println("Flight " + p.getFlightNumber() + " is awaiting takeoff at Runway " + airport.get(index2).getName());
             counter++;
-        }
+        }//end while
 
-        for (int i = 0; i < planes.size(); i++) {
+        for (int i = 0; i < planes.size(); i++) { //Iterate through the list of planes awaiting re-entrance to find planes with runway assigned to the runway that is closing
 
-            if (index == getRunwayIndex(planes.get(i).getRunway())) {
+            if (index == getRunwayIndex(planes.get(i).getRunway())) { //If a plane is found, verify & then set new runway
                 p = planes.get(i);
                 System.out.print("Enter new runway for plane " + p.getFlightNumber() + ": ");
                 newRun = stdin.readLine().toUpperCase();
                 System.out.print(newRun + "/n");
                 index2 = getRunwayIndex(newRun);
 
-                while (index2 == -1 || index2 == index) {
+                while (index2 == -1 || index2 == index) { //Verify newRun
                     System.out.print("Runway does not exist or is the same as the Runway that is closing! Pick another runway: ");
                     newRun = stdin.readLine().toUpperCase();
                     System.out.print(newRun + "/n");
                     index2 = getRunwayIndex(newRun);
-                }
+                }//end while
 
-                p.setRunway(newRun);
+                p.setRunway(newRun); //Set plane's runway to the new Runway
                 System.out.println("Flight " + p.getFlightNumber() + " has been assigned a new runway, and is now awaiting re-entry to Runway " + newRun);
                 counter++;
-            }
-        }
+            }//end if
+        }//end for
         System.out.println("Runway " + str + " has been closed. " + counter + " Flights were transferred to new Runways.");
-    }
+    }//end five()
 
     //@author Nic LaSala
     public static void six() {
