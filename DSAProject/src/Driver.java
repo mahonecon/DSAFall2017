@@ -281,6 +281,7 @@ public class Driver {
             }//end while
 
             airport.get(index2).enqueue(p);
+            airport.remove(index);
             System.out.println("Flight " + p.getFlightNumber() + " is awaiting takeoff at Runway " + airport.get(index2).getName());
             counter++;
         }//end while
