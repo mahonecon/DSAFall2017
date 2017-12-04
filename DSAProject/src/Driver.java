@@ -13,21 +13,21 @@ import java.io.*;
 
 //Class declaration
 public class Driver {
-	//Static global fields that will used within the program
-	//No additional classes of these types will be made during the execution of the program
+    //Static global fields that will used within the program
+    //No additional classes of these types will be made during the execution of the program
+
     public static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));			//Instance of buffered reader to take user inputs, used for all inputs taken during runtime
     public static ListArrayBasedPlus<Runway<Plane>> airport = new ListArrayBasedPlus<Runway<Plane>>();	//Instance resizable list ADT to store open runways at the airport
-    public static ListArrayBasedPlus<Plane> planes = new ListArrayBasedPlus<Plane>();					//Instance resizable list ADT used as a plane lot for planes not cleared to take-off
-    //public static ListArrayBasedPlus<String> names = new ListArrayBasedPlus<String>();					//Instance resizable list ADT to store the names of every runway open
+    public static ListArrayBasedPlus<Plane> planes = new ListArrayBasedPlus<Plane>();					//Instance resizable list ADT used as a plane lot for planes not cleared to takeoff
     public static ListArrayBasedPlus<String> numbers = new ListArrayBasedPlus<String>();				//Instance resizable list ADT to store the flight number of every plane at the airport
-    
+
     // static global variables.
     public static int runwayCounter = 0;	//used for option 2, must be consistent
     public static int takeOffs = 0;		//used for option 8, must be be consistent
 
     //@author Conor Mahoney
     public static void main(String[] args) throws IOException {
-    	//Initialize Menu code
+        //Initialize Menu code
         int code = 0;
         //User selects starting number of runways open at airport
         System.out.println("Welcome to your new & improved Airport management program!");
@@ -36,9 +36,9 @@ public class Driver {
         for (int i = 0; i < numRunways; i++) { //For the specified number of runways
             four(); //calls the method for adding Runways
         }//end for
-        //
+
         while (code != 9) {
-        	//This menu will be printed every time the user gets to make a choice
+            //This menu will be printed every time the user gets to make a choice
             System.out.println("Menu! Input number to reach menu option!");
             System.out.println("\t" + "1. Plane enters the system.");
             System.out.println("\t" + "2. Plane takes off.");
@@ -54,9 +54,9 @@ public class Driver {
             System.out.print(code + "\n");
             //End of menu, and user input
             switch (code) {
-            //Cases 1-7 call methods that will perform the desired functionality
-            //Case 8 performs its function within the case
-            //Default case allows the user to renter their choice if they enter a number outside the 1-9 range
+                //Cases 1-7 call methods that will perform the desired functionality
+                //Case 8 performs its function within the case
+                //Default case allows the user to renter their choice if they enter a number outside the 1-9 range
                 case 1:
                     one();
                     break;
@@ -89,8 +89,8 @@ public class Driver {
                     System.out.println(takeOffs + " planes have taken off ");
                     break;
                 default:
-                	System.out.println("Invalid option.");
-                	break;
+                    System.out.println("Invalid option.");
+                    break;
 
             } //end switch
         }//end while
@@ -160,6 +160,7 @@ public class Driver {
             }
         }//end of for loop
     }//end of method one
+
     /*
      * @author Conor Mahoney
      * method two()
@@ -168,47 +169,45 @@ public class Driver {
      * If plane is denied clearance it is moved to the plane lot
      */
     public static void two() throws IOException {
-    	//checks that plane lot is not empty
-    	if (airportEmpty()) {
+        //checks that plane lot is not empty
+        if (airportEmpty()) {
             System.out.println("There are no planes at the airport!");
-        }
-    	else{
-    		//decides which plane's turn it is
-    		int tplane = runwayCounter % airport.size();
-    		boolean toff =false;
-    		while(!toff){
-    			System.out.println("Allow Plane with Flight number " +  airport.get(tplane).peek().getFlightNumber() + " to take off from Runway " + airport.get(tplane).getName() + "? (Y/N)");
-    			String choice =stdin.readLine().toUpperCase();
-    			//Take-off sequence
-    			if(choice.equals("Y")){
-    				System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + " has taken off from Runway " + airport.get(tplane).getName());
-    				takeOffs++;	//adds to the total number of successful take-offs
-    				runwayCounter++;	//ensure that the next time the method id called the next runway is used
-                    for(int j = 0; j < numbers.size(); j++) {
-                        if(airport.get(tplane).peek().getFlightNumber().equals(numbers.get(j))) {
+        } else {
+            //decides which plane's turn it is
+            int tplane = runwayCounter % airport.size();
+            boolean toff = false;
+            while (!toff) {
+                System.out.println("Allow Plane with Flight number " + airport.get(tplane).peek().getFlightNumber() + " to take off from Runway " + airport.get(tplane).getName() + "? (Y/N)");
+                String choice = stdin.readLine().toUpperCase();
+                //Take-off sequence
+                if (choice.equals("Y")) {
+                    System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + " has taken off from Runway " + airport.get(tplane).getName());
+                    takeOffs++;	//adds to the total number of successful take-offs
+                    runwayCounter++;	//ensure that the next time the method id called the next runway is used
+                    for (int j = 0; j < numbers.size(); j++) {
+                        if (airport.get(tplane).peek().getFlightNumber().equals(numbers.get(j))) {
                             numbers.remove(j);
                         }
                     }
-    				airport.get(tplane).dequeue();
-    				toff = true;
+                    airport.get(tplane).dequeue();
+                    toff = true;
 
-    			}
-    			//Moves to plane to the plane lot
-    			else if(choice.equals("N")){
-    				System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + "  denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
-    				planes.add(planes.size(), airport.get(tplane).peek());
-    				airport.get(tplane).dequeue();
-    				runwayCounter++;
-    				toff = true;
-    			}
-    			//Stays in the loop if the user chooses anything other then yes or no
-    			else{
-    				System.out.println("invalid entry, try again");
-    				choice =stdin.readLine().toUpperCase();
-    			}
-    		}
-    	}
+                } //Moves to plane to the plane lot
+                else if (choice.equals("N")) {
+                    System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + "  denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
+                    planes.add(planes.size(), airport.get(tplane).peek());
+                    airport.get(tplane).dequeue();
+                    runwayCounter++;
+                    toff = true;
+                } //Stays in the loop if the user chooses anything other then yes or no
+                else {
+                    System.out.println("invalid entry, try again");
+                    choice = stdin.readLine().toUpperCase();
+                }
+            }
+        }
     }
+
     /*
      * @author Nic LaSala
      * method three()
@@ -216,11 +215,11 @@ public class Driver {
      * allows for a new plane to re-enter its previously designated runway.
      */
     public static void three() throws IOException {
-    	//checks that plane lot is not empty
+        //checks that plane lot is not empty
         if (planes.isEmpty()) {
             System.out.println("No Planes are awaiting re-entry!");
         } else {
-        	//User entered flight number of plane they wish to allow re-entry
+            //User entered flight number of plane they wish to allow re-entry
             System.out.println("Please enter flight number for plane re-entering runway");
             String rnum = stdin.readLine().toUpperCase(); //desired number
             boolean realNum = false;	// stays in loop until a plane re-enters its runway
@@ -229,7 +228,7 @@ public class Driver {
             int run = 0;				// Initialize variable, Position of runway at airport
             boolean reAdded = false;
             while (!reAdded) {
-            	//loop to find plane of user entered flight number
+                //loop to find plane of user entered flight number
                 for (int e = 0; e < planes.size(); e++) {
                     if (rnum.equals(planes.get(e).getFlightNumber())) {
                         pos = e;
@@ -254,9 +253,8 @@ public class Driver {
                         System.out.println("That plane's runway has closed, try another");
                         rnum = stdin.readLine().toUpperCase();
                     }//end if/else
-                    
-                }
-                //if the plane is not found a new number will be requested
+
+                } //if the plane is not found a new number will be requested
                 else {
                     System.out.println("That plane's is not awaiting re-entry, try another");
                     rnum = stdin.readLine().toUpperCase();
@@ -264,6 +262,7 @@ public class Driver {
             }//end of loop
         }//end of if/else
     }//end of three()
+
     /*
      * @author Nic LaSala
      * method four()
@@ -295,7 +294,7 @@ public class Driver {
         } //end while
 
     }//end four
-    
+
     /*
      * @author Conor Mahoney
      * method five()
@@ -367,25 +366,17 @@ public class Driver {
                 counter++;
             }//end if
         }//end for        
-        
-        //********************REMOVE FOLLOWING COMMENTED CODE IF FIVE() WORKS!*************************************************
-//        for (int j = 0; j < names.size(); j++) {
-//            if (names.get(j).equals(str)) {
-//                names.remove(j);
-//                j = names.size();
-//            }
-//        }
-
         airport.remove(index);
         System.out.println("Runway " + str + " has been closed. " + counter + " Flights were transferred to new Runways.");
     }//end five()
+
     /*
      * @author Nic LaSala
      * method six()
      * displays planes at the front of each runway
      */
     public static void six() {
-    	//tell the user if there is no planes on the runways
+        //tell the user if there is no planes on the runways
         if (airportEmpty()) {
             System.out.println("There are no planes at the airport");
         } else {
@@ -399,13 +390,14 @@ public class Driver {
         }//end of if/else
 
     }//end of six()
+
     /*
      * @author Nic LaSala
      * method 7()
      * allows for a new plane to enter the system and be placed on a runway 
      */
     public static void seven() {
-    	//Tells the user if there are no planes in the plane lot
+        //Tells the user if there are no planes in the plane lot
         if (planes.isEmpty()) {
             System.out.println("There are no planes awaiting re-entry");
         } else {
@@ -418,6 +410,7 @@ public class Driver {
             }//end for loop
         }//end if/else
     }//end of seven()
+
     /*
      * @author Conor Mahoney
      * method getRunwayIndex()
@@ -434,6 +427,7 @@ public class Driver {
         }
         return -1;
     }
+
     /*
      * @author Nic LaSala
      * method airportEmpty()
@@ -450,55 +444,4 @@ public class Driver {
         }
         return empty;
     }
-    
-/*    
- *   public static void twov2() throws IOException {
- *       int emptyRunways = 0;
- *       boolean takeOff = false;
- *       Runway run;
- *       if (airportEmpty()) {
- *           System.out.println("There are no planes at the airport!");
- *       } 
- *       else {
- *           while (!takeOff && emptyRunways != airport.size() - 1) {
- *               if (runwayCounter == airport.size()) { //if runwayCounter hits the last runway in the list, start from 0.
- *                   runwayCounter = 0;
- *               }//end if
- *               run = airport.get(runwayCounter); //assign temporary runway value to airport.get(runwayCounter)
- *               try {
- *                   Plane p = (Plane) run.dequeue();
- *                   System.out.println("Allow Plane with Flight number " + p.getFlightNumber() + " to take off from Runway " + run.getName() + "? (Y/N)");
- *                   String str = stdin.readLine().toUpperCase();
- *                   if (str.equals("Y")) {
- *                       System.out.println("Plane with Flight number: " + p.getFlightNumber() + " has taken off from Runway " + run.getName());
- *                       takeOffs++;
- *                       takeOff = true;
- *                       for(int j = 0; j < numbers.size(); j++) {
- *                           if(p.getFlightNumber().equals(numbers.get(j))) {
- *                               numbers.remove(j);
- *                               j = numbers.size();
- *                           }
- *                       }
- *                   } else {
- *                       planes.add(planes.size(), p);
- *                       System.out.println("Plane with Flight number: " + p.getFlightNumber() + " denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
- *                   }//end if/else
- *                   airport.remove(runwayCounter); //Remove temp runway from airport
- *                   airport.add(runwayCounter, run); //add modified runway back to airport at the same position it was removed from.
- *                   runwayCounter++;
- *                   if(run.isEmpty()) {
- *                       runwayCounter++;
- *                   }
- *               } catch (QueueException q) {
- *                   emptyRunways++;
- *               }//end try/catch
- *           }//end while
- *           if (emptyRunways == airport.size() - 1) {
- *               System.out.println("No plane on any runway!");
- *           }//end if
- *       }//end if/else
- *   }//end two()
- */ 
-
 }
-
