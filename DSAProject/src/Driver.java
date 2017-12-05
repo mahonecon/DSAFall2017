@@ -39,7 +39,7 @@ public class Driver {
 
         while (code != 9) {
             //This menu will be printed every time the user gets to make a choice
-            System.out.println("Menu! Input number to reach menu option!");
+            System.out.println("\n" + "Menu! Input number to reach menu option!");
             System.out.println("\t" + "1. Plane enters the system.");
             System.out.println("\t" + "2. Plane takes off.");
             System.out.println("\t" + "3. Plane is allowed to re-enter a runway.");
@@ -403,11 +403,10 @@ public class Driver {
         if (airportEmpty()) {
             System.out.println("There are no planes at the airport");
         } else {
-            System.out.println("These planes are awaiting take-off");
             //Loops through each runway to display the plane ready for takeoff
             for (int s = 0; s < airport.size(); s++) {
                 if (!airport.get(s).isEmpty()) {
-                    System.out.println("These planes are waiting for takeoff on Runway " + airport.get(s).getName() + ": ");
+                    System.out.print("These planes are waiting for takeoff on Runway " + airport.get(s).getName() + ": ");
                     System.out.println(airport.get(s).toString());
                 }
             }//end of loop
