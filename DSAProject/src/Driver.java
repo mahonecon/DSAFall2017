@@ -88,7 +88,7 @@ public class Driver {
                 case 8:
                     System.out.println(takeOffs + " planes have taken off ");
                     break;
-                    
+
                 default:
                     System.out.println("Invalid option.");
                     break;
@@ -183,34 +183,38 @@ public class Driver {
             int tplane = runwayCounter % airport.size();
             boolean toff = false;
             while (!toff) {
-                System.out.print("Allow Plane with Flight number " + airport.get(tplane).peek().getFlightNumber() + " to take off from Runway " + airport.get(tplane).getName() + "? (Y/N) : ");
-                String choice = stdin.readLine();
-                System.out.print(choice + "\n");
-                //Take-off sequence
-                if (choice.equalsIgnoreCase("Y")) {
-                    System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + " has taken off from Runway " + airport.get(tplane).getName());
-                    takeOffs++;	//adds to the total number of successful take-offs
-                    runwayCounter++;	//ensure that the next time the method id called the next runway is used
-                    for (int j = 0; j < numbers.size(); j++) {
-                        if (airport.get(tplane).peek().getFlightNumber().equalsIgnoreCase(numbers.get(j))) {
-                            numbers.remove(j);
-                        }
-                    }
-                    airport.get(tplane).dequeue();
-                    toff = true;
-
-                } //Moves to plane to the plane lot
-                else if (choice.equalsIgnoreCase("N")) {
-                    System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + "  denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
-                    planes.add(planes.size(), airport.get(tplane).peek());
-                    airport.get(tplane).dequeue();
-                    runwayCounter++;
-                    toff = true;
-                } //Stays in the loop if the user chooses anything other then yes or no
-                else {
-                    System.out.print("Invalid entry, try again: ");
-                    choice = stdin.readLine();
+                if (!airport.get(tplane).isEmpty()) {
+                    System.out.print("Allow Plane with Flight number " + airport.get(tplane).peek().getFlightNumber() + " to take off from Runway " + airport.get(tplane).getName() + "? (Y/N) : ");
+                    String choice = stdin.readLine();
                     System.out.print(choice + "\n");
+                    //Take-off sequence
+                    if (choice.equalsIgnoreCase("Y")) {
+                        System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + " has taken off from Runway " + airport.get(tplane).getName());
+                        takeOffs++;	//adds to the total number of successful take-offs
+                        runwayCounter++;	//ensure that the next time the method id called the next runway is used
+                        for (int j = 0; j < numbers.size(); j++) {
+                            if (airport.get(tplane).peek().getFlightNumber().equalsIgnoreCase(numbers.get(j))) {
+                                numbers.remove(j);
+                            }
+                        }
+                        airport.get(tplane).dequeue();
+                        toff = true;
+
+                    } //Moves to plane to the plane lot
+                    else if (choice.equalsIgnoreCase("N")) {
+                        System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + "  denied take-off clearance, added to list of planes awaiting re-entrance to Runway.");
+                        planes.add(planes.size(), airport.get(tplane).peek());
+                        airport.get(tplane).dequeue();
+                        runwayCounter++;
+                        toff = true;
+                    } //Stays in the loop if the user chooses anything other then yes or no
+                    else {
+                        System.out.print("Invalid entry, try again: ");
+                        choice = stdin.readLine();
+                        System.out.print(choice + "\n");
+                    }
+                } else {
+                    runwayCounter++;
                 }
             }
         }
