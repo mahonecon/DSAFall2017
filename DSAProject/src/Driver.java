@@ -105,32 +105,36 @@ public class Driver {
      * allows for a new plane to enter the system and be placed on a runway 
      */
     public static void one() throws IOException {
-        System.out.println("Enter the flight number for the new plane");
+        System.out.print("Enter the flight number for the new plane: ");
         String fnum = stdin.readLine();	// User entered flight number
+        System.out.print(fnum + "\n");
         boolean check = false;	// boolean verifies the number is new
         boolean hasNum = false;	// used to stay within loop until a unique number is enter
         // loop begins
         while (!hasNum) {
             for (int n = 0; n < numbers.size(); n++) {
-                if (fnum.equals(numbers.get(n))) {
+                if (fnum.equalsIgnoreCase(numbers.get(n))) {
                     check = true;
                 }
             }
             if (!check) {
                 hasNum = true;
             } else {
-                System.out.println("Try a new number");
+                System.out.print("Try a new number: ");
                 fnum = stdin.readLine();
+                System.out.print(fnum + "\n");
                 check = false;
             }
         }
         //loop ends
         //Prompts the user to enter destination
-        System.out.println("Please enter the destination: ");
+        System.out.print("Please enter the destination: ");
         String des = stdin.readLine();
+        System.out.print(des + "\n");
         //Prompts the user the enter a runway for the plane to take-off from
-        System.out.println("Enter runway name");
+        System.out.print("Enter runway name: ");
         String rName = stdin.readLine();
+        System.out.print(rName + "\n");
         boolean ar = false;		//boolean so loop continues until a real runway is entered
         boolean real = false;	// verifies that users entered runway is open
         //loop ensure user picks an open runway
@@ -144,8 +148,9 @@ public class Driver {
             if (real == true) {
                 ar = true;
             } else {
-                System.out.println("That runway is not open, try a new one");
+                System.out.print("That runway is not open, try a new one: ");
                 rName = stdin.readLine();
+                System.out.print(rName + "\n");
                 real = false;
             }
         }//end of loop
@@ -178,8 +183,9 @@ public class Driver {
             int tplane = runwayCounter % airport.size();
             boolean toff = false;
             while (!toff) {
-                System.out.println("Allow Plane with Flight number " + airport.get(tplane).peek().getFlightNumber() + " to take off from Runway " + airport.get(tplane).getName() + "? (Y/N)");
+                System.out.print("Allow Plane with Flight number " + airport.get(tplane).peek().getFlightNumber() + " to take off from Runway " + airport.get(tplane).getName() + "? (Y/N) : ");
                 String choice = stdin.readLine();
+                System.out.print(choice + "\n");
                 //Take-off sequence
                 if (choice.equalsIgnoreCase("Y")) {
                     System.out.println("Plane with Flight number: " + airport.get(tplane).peek().getFlightNumber() + " has taken off from Runway " + airport.get(tplane).getName());
@@ -202,8 +208,9 @@ public class Driver {
                     toff = true;
                 } //Stays in the loop if the user chooses anything other then yes or no
                 else {
-                    System.out.println("invalid entry, try again");
+                    System.out.print("Invalid entry, try again: ");
                     choice = stdin.readLine();
+                    System.out.print(choice + "\n");
                 }
             }
         }
@@ -221,10 +228,11 @@ public class Driver {
             System.out.println("No Planes are awaiting re-entry!");
         } else {
             //User entered flight number of plane they wish to allow re-entry
-            System.out.println("Please enter flight number for plane re-entering runway");
+            System.out.print("Please enter flight number for plane re-entering runway: ");
             String rnum = stdin.readLine(); //desired number
+            System.out.print(rnum + "\n");
             boolean realNum = false;	// stays in loop until a plane re-enters its runway
-            boolean op = false;			// verfies that a valif flight number had been entered
+            boolean op = false;			// verfies that a valid flight number had been entered
             int pos = 0;				// Initialize variable, Position of plane in the lot
             int run = 0;				// Initialize variable, Position of runway at airport
             boolean reAdded = false;
@@ -251,14 +259,16 @@ public class Driver {
                         reAdded = true;
                         planes.remove(pos);
                     } else {
-                        System.out.println("That plane's runway has closed, try another");
+                        System.out.print("That plane's runway has closed, try another: ");
                         rnum = stdin.readLine();
+                        System.out.print(rnum + "\n");
                     }//end if/else
 
                 } //if the plane is not found a new number will be requested
                 else {
-                    System.out.println("That plane's is not awaiting re-entry, try another");
+                    System.out.print("That plane's is not awaiting re-entry, try another: ");
                     rnum = stdin.readLine();
+                    System.out.print(rnum + "\n");
                 }
             }//end of loop
         }//end of if/else
@@ -271,8 +281,9 @@ public class Driver {
      * allows for a new runway to be opened 
      */
     public static void four() throws IOException {
-        System.out.println("Enter the name of runway number " + (airport.size() + 1) + ": ");
+        System.out.print("Enter the name of runway number " + (airport.size() + 1) + ": ");
         String runwayName = stdin.readLine();
+        System.out.print(runwayName + "\n");
         boolean dup = false;
         boolean added = false;
         //loop ensure that a new runway has been added
@@ -288,8 +299,9 @@ public class Driver {
                 //names.add(names.size(), runwayName);
                 added = true;
             } else {
-                System.out.println("Runway name alreay exists, try a different name");
+                System.out.print("Runway name alreay exists, try a different name: ");
                 runwayName = stdin.readLine();
+                System.out.print(runwayName + "\n");
                 dup = false;
             }//end if/else
         } //end while
