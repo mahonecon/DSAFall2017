@@ -4,7 +4,7 @@ public class Driver {
 
 	public static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
 	public static MyBinarySearchTreePlus<Data<String>, String> tree = new MyBinarySearchTreePlus();
-        public static String rootItem = "root"
+        public static String rootItem = "root";
         public static Data r = new Data(rootItem);
         
 	public static void main(String[] args) throws IOException {
