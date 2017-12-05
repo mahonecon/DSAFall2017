@@ -181,6 +181,7 @@ public class Driver {
         } else {
             //decides which plane's turn it is
             int tplane = runwayCounter % airport.size();
+            int runs = airport.size();
             boolean toff = false;
             while (!toff) {
                 if (!airport.get(tplane).isEmpty()) {
@@ -213,8 +214,13 @@ public class Driver {
                         choice = stdin.readLine();
                         System.out.print(choice + "\n");
                     }
-                } else {
+                } else if (runs != 0) {
                     runwayCounter++;
+                    tplane = runwayCounter % airport.size();
+                    runs--;
+                } else {
+                    System.out.println("There are currently no planes awaiting takeoff!");
+                    toff = true;
                 }
             }
         }
