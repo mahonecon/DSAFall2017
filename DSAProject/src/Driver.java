@@ -88,7 +88,7 @@ public class Driver {
                 case 8:
                     System.out.println(takeOffs + " planes have taken off ");
                     break;
-                    
+
                 default:
                     System.out.println("Invalid option.");
                     break;
