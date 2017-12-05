@@ -10,23 +10,25 @@
 
 //Runway extends the queue class
 //Used to store the planes in the airport system
-public class Runway<T> extends Queue<T>{
-	// gives every instance of the runway a unique name checked for uniqueness in driver
-	protected String name; //Protected name
-	/*
+public class Runway<T> extends Queue<T> {
+    // gives every instance of the runway a unique name checked for uniqueness in driver
+
+    protected String name; //Protected name
+
+    /*
 	 * Runway Constructor
 	 * @param instanstance created with user defined name
-	 */
-	public Runway(String name) {
-		super();
-		this.name = name;
-	}
-	/*
+     */
+    public Runway(String name) {
+        super();
+        this.name = name;
+    }
+
+    /*
 	 *  getName
 	 *  @return used to return the runways name as a string
-	 */
-	public String getName() {
-		return name;
-	}
-
+     */
+    public String getName() {
+        return name;
+    }
 }

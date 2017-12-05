@@ -50,5 +50,10 @@ public class Plane {
 	public void setRunway(String newRunway) {
 		runway = newRunway;
 	}
+        
+        public String toString() {
+            String str = ("Flight " + flightNumber + " to " + destination + "\n");
+            return str;
+        }
 
 }
