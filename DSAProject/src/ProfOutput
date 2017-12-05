@@ -1,0 +1,1178 @@
+Welcome to your new & improved Airport management program!
+Please enter the number of runways at the airport: 
+Enter the name of runway number 1: NorthEast
+Enter the name of runway number 2: SouthWest
+Enter the name of runway number 3: West
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 2
+There are no planes at the airport!
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 3
+No Planes are awaiting re-entry!
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+There are no planes at the airport
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+There are no planes awaiting re-entry
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+0 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: USAir705
+Please enter the destination: Boston
+Enter runway name: NorthEast
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: AirFrance212
+Please enter the destination: Paris
+Enter runway name: NorthEast
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: British909
+Please enter the destination: London
+Enter runway name: NorthEast
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: United954
+Please enter the destination: Pittsburgh
+Enter runway name: NorthWest
+That runway is not open, try a new one: West
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: Delta204
+Please enter the destination: Chicago
+Enter runway name: NorthEast
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: USAir305
+Please enter the destination: San Diego
+Enter runway name: West
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: United572
+Please enter the destination: Fort Lauderdale
+Enter runway name: SouthWest
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 3
+No Planes are awaiting re-entry!
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight USAir705 to Boston
+Flight AirFrance212 to Paris
+Flight British909 to London
+Flight Delta204 to Chicago
+
+These planes are waiting for takeoff on Runway SouthWest: Flight United572 to Fort Lauderdale
+
+These planes are waiting for takeoff on Runway West: Flight United954 to Pittsburgh
+Flight USAir305 to San Diego
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+There are no planes awaiting re-entry
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+0 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 2
+Allow Plane with Flight number USAir705 to take off from Runway NorthEast? (Y/N) : N
+Plane with Flight number: USAir705  denied take-off clearance, added to list of planes awaiting re-entrance to Runway.
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight AirFrance212 to Paris
+Flight British909 to London
+Flight Delta204 to Chicago
+
+These planes are waiting for takeoff on Runway SouthWest: Flight United572 to Fort Lauderdale
+
+These planes are waiting for takeoff on Runway West: Flight United954 to Pittsburgh
+Flight USAir305 to San Diego
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: USAir705 to Boston
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+0 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: American493
+Please enter the destination: Seattle
+Enter runway name: West
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 2
+Allow Plane with Flight number United572 to take off from Runway SouthWest? (Y/N) : Y
+Plane with Flight number: United572 has taken off from Runway SouthWest
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight AirFrance212 to Paris
+Flight British909 to London
+Flight Delta204 to Chicago
+
+These planes are waiting for takeoff on Runway West: Flight United954 to Pittsburgh
+Flight USAir305 to San Diego
+Flight American493 to Seattle
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: USAir705 to Boston
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+1 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 2
+Allow Plane with Flight number United954 to take off from Runway West? (Y/N) : N
+Plane with Flight number: United954  denied take-off clearance, added to list of planes awaiting re-entrance to Runway.
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight AirFrance212 to Paris
+Flight British909 to London
+Flight Delta204 to Chicago
+
+These planes are waiting for takeoff on Runway West: Flight USAir305 to San Diego
+Flight American493 to Seattle
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: USAir705 to Boston
+Flight: United954 to Pittsburgh
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+1 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 2
+Allow Plane with Flight number AirFrance212 to take off from Runway NorthEast? (Y/N) : N
+Plane with Flight number: AirFrance212  denied take-off clearance, added to list of planes awaiting re-entrance to Runway.
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight British909 to London
+Flight Delta204 to Chicago
+
+These planes are waiting for takeoff on Runway West: Flight USAir305 to San Diego
+Flight American493 to Seattle
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: USAir705 to Boston
+Flight: United954 to Pittsburgh
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+1 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 2
+Allow Plane with Flight number USAir305 to take off from Runway West? (Y/N) : Y
+Plane with Flight number: USAir305 has taken off from Runway West
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight British909 to London
+Flight Delta204 to Chicago
+
+These planes are waiting for takeoff on Runway West: Flight American493 to Seattle
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: USAir705 to Boston
+Flight: United954 to Pittsburgh
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+2 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: Continental339
+Please enter the destination: Montreal
+Enter runway name: NorthEast
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: jetBlue856
+Please enter the destination: Atlanta
+Enter runway name: SouthWest
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: AmericaWest691
+Please enter the destination: San Francisco
+Enter runway name: West
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight British909 to London
+Flight Delta204 to Chicago
+Flight Continental339 to Montreal
+
+These planes are waiting for takeoff on Runway SouthWest: Flight jetBlue856 to Atlanta
+
+These planes are waiting for takeoff on Runway West: Flight American493 to Seattle
+Flight AmericaWest691 to San Francisco
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: USAir705 to Boston
+Flight: United954 to Pittsburgh
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+2 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 4
+Enter the name of runway number 4: West
+Runway name alreay exists, try a different name: East
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight British909 to London
+Flight Delta204 to Chicago
+Flight Continental339 to Montreal
+
+These planes are waiting for takeoff on Runway SouthWest: Flight jetBlue856 to Atlanta
+
+These planes are waiting for takeoff on Runway West: Flight American493 to Seattle
+Flight AmericaWest691 to San Francisco
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: USAir705 to Boston
+Flight: United954 to Pittsburgh
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+2 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: Lufthansa581
+Please enter the destination: Muenchen
+Enter runway name: East
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: Alitalia576
+Please enter the destination: Rome
+Enter runway name: East
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 1
+Enter the flight number for the new plane: Continental304
+Please enter the destination: Miami
+Enter runway name: SouthWest
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight British909 to London
+Flight Delta204 to Chicago
+Flight Continental339 to Montreal
+
+These planes are waiting for takeoff on Runway SouthWest: Flight jetBlue856 to Atlanta
+Flight Continental304 to Miami
+
+These planes are waiting for takeoff on Runway West: Flight American493 to Seattle
+Flight AmericaWest691 to San Francisco
+
+These planes are waiting for takeoff on Runway East: Flight Lufthansa581 to Muenchen
+Flight Alitalia576 to Rome
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: USAir705 to Boston
+Flight: United954 to Pittsburgh
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+2 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 2
+Allow Plane with Flight number American493 to take off from Runway West? (Y/N) : Y
+Plane with Flight number: American493 has taken off from Runway West
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight British909 to London
+Flight Delta204 to Chicago
+Flight Continental339 to Montreal
+
+These planes are waiting for takeoff on Runway SouthWest: Flight jetBlue856 to Atlanta
+Flight Continental304 to Miami
+
+These planes are waiting for takeoff on Runway West: Flight AmericaWest691 to San Francisco
+
+These planes are waiting for takeoff on Runway East: Flight Lufthansa581 to Muenchen
+Flight Alitalia576 to Rome
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: USAir705 to Boston
+Flight: United954 to Pittsburgh
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+3 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 3
+Please enter flight number for plane re-entering runway: USAir705
+Plane number: USAir705 has re-entered.
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight British909 to London
+Flight Delta204 to Chicago
+Flight Continental339 to Montreal
+Flight USAir705 to Boston
+
+These planes are waiting for takeoff on Runway SouthWest: Flight jetBlue856 to Atlanta
+Flight Continental304 to Miami
+
+These planes are waiting for takeoff on Runway West: Flight AmericaWest691 to San Francisco
+
+These planes are waiting for takeoff on Runway East: Flight Lufthansa581 to Muenchen
+Flight Alitalia576 to Rome
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: United954 to Pittsburgh
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+3 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 2
+Allow Plane with Flight number Lufthansa581 to take off from Runway East? (Y/N) : Y
+Plane with Flight number: Lufthansa581 has taken off from Runway East
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight British909 to London
+Flight Delta204 to Chicago
+Flight Continental339 to Montreal
+Flight USAir705 to Boston
+
+These planes are waiting for takeoff on Runway SouthWest: Flight jetBlue856 to Atlanta
+Flight Continental304 to Miami
+
+These planes are waiting for takeoff on Runway West: Flight AmericaWest691 to San Francisco
+
+These planes are waiting for takeoff on Runway East: Flight Alitalia576 to Rome
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: United954 to Pittsburgh
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+4 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 2
+Allow Plane with Flight number British909 to take off from Runway NorthEast? (Y/N) : Y
+Plane with Flight number: British909 has taken off from Runway NorthEast
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 5
+Enter runway: North
+Runway does not exist! Pick another runway: West
+Enter new runway for plane AmericaWest691: West
+Runway does not exist or is the sames as the Runway that is closing! Pick another runway: North
+Runway does not exist or is the sames as the Runway that is closing! Pick another runway: NorthEast
+Flight AmericaWest691 is awaiting takeoff at Runway NorthEast
+Enter new runway for plane United954: SouthWest
+Flight United954 has been assigned a new runway, and is now awaiting re-entry to Runway SouthWest
+Runway West has been closed. 2 Flights were transferred to new Runways.
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight Delta204 to Chicago
+Flight Continental339 to Montreal
+Flight USAir705 to Boston
+Flight AmericaWest691 to San Francisco
+
+These planes are waiting for takeoff on Runway SouthWest: Flight jetBlue856 to Atlanta
+Flight Continental304 to Miami
+
+These planes are waiting for takeoff on Runway East: Flight Alitalia576 to Rome
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: United954 to Pittsburgh
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+5 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 3
+Please enter flight number for plane re-entering runway: United953
+That plane's is not awaiting re-entry, try another: United954
+Plane number: United954 has re-entered.
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 6
+These planes are waiting for takeoff on Runway NorthEast: Flight Delta204 to Chicago
+Flight Continental339 to Montreal
+Flight USAir705 to Boston
+Flight AmericaWest691 to San Francisco
+
+These planes are waiting for takeoff on Runway SouthWest: Flight jetBlue856 to Atlanta
+Flight Continental304 to Miami
+Flight United954 to Pittsburgh
+
+These planes are waiting for takeoff on Runway East: Flight Alitalia576 to Rome
+
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 7
+These planes are awaiting re-entry
+Flight: AirFrance212 to Paris
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 8
+5 planes have taken off 
+
+Menu! Input number to reach menu option!
+	1. Plane enters the system.
+	2. Plane takes off.
+	3. Plane is allowed to re-enter a runway.
+	4. Runway opens.
+	5. Runway closes.
+	6. Display info about planes waiting to take off.
+	7. Display info about planes waiting to be allowed to re-enter a runway.
+	8. Display number of planes who have taken off.
+	9. Exit.
+Make your menu selection now: 9
+The airport has closed. Good bye!!!
