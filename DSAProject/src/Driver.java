@@ -88,6 +88,10 @@ public class Driver {
                 case 8:
                     System.out.println(takeOffs + " planes have taken off ");
                     break;
+                    
+                case 9:
+                    System.out.println("The airport has closed. Good bye!!!");
+                    break;
 
                 default:
                     System.out.println("Invalid option.");
@@ -95,7 +99,6 @@ public class Driver {
 
             } //end switch
         }//end while
-        System.out.println("The airport has closed. Good bye!!!");
     }//end main
 
     /*
