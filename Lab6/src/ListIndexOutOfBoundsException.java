@@ -8,10 +8,9 @@
  * @version: 2017.10.09
  */
 public class ListIndexOutOfBoundsException
-    extends IndexOutOfBoundsException
-{
-    public ListIndexOutOfBoundsException(String s)
-    {
+        extends IndexOutOfBoundsException {
+
+    public ListIndexOutOfBoundsException(String s) {
         super(s);
     }  // end constructor
 }  // end ListIndexOutOfBoundsException
