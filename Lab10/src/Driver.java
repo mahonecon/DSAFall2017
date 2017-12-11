@@ -1,4 +1,6 @@
+
 import java.io.*;
+
 /*
  * Purpose: Data Structure and Algorithms Lab 10
  * Status: Complete and thoroughly tested
@@ -17,7 +19,7 @@ public class Driver {
 
         int code = 0;
 
-        while(code != 5) {
+        while (code != 5) {
             System.out.println("Menu! Input number to reach menu option!");
             System.out.println("\t" + "1. Initialize array");
             System.out.println("\t" + "2. Add to array");
@@ -28,23 +30,23 @@ public class Driver {
             code = Integer.valueOf(stdin.readLine());
             System.out.print(code + "\n");
 
-            switch(code) {
+            switch (code) {
 
-            case 1:
-                one();
-                break;
+                case 1:
+                    one();
+                    break;
 
-            case 2:
-                two();
-                break;
+                case 2:
+                    two();
+                    break;
 
-            case 3:
-                three();
-                break;
+                case 3:
+                    three();
+                    break;
 
-            case 4:
-                four();
-                break;
+                case 4:
+                    four();
+                    break;
 
             } //end switch
         }//end while
@@ -60,7 +62,7 @@ public class Driver {
     }//end one
 
     public static void two() throws IOException {
-        if(pos != array.length) {
+        if (pos != array.length) {
             System.out.print("Add item to array: ");
             int temp = Integer.valueOf(stdin.readLine());
             System.out.print(temp + "\n");
@@ -73,33 +75,33 @@ public class Driver {
 
     public static void three() {
         System.out.print("Array before sort: [");
-        for(int i = 0; i < pos-1; i++) {
+        for (int i = 0; i < pos - 1; i++) {
             System.out.print(array[i] + ", ");
         }
-        System.out.print(array[pos-1] + "] \n");
+        System.out.print(array[pos - 1] + "] \n");
         array = merger.sort(array);
         System.out.print("Array after sort: [");
-        for(int i = 0; i < pos-1; i++) {
+        for (int i = 0; i < pos - 1; i++) {
             System.out.print(array[i] + ", ");
         }
         System.out.print(array[pos - 1] + "] \n");
     }//end three
 
     public static void four() throws IOException {
-        System.out.print("Choose minimum index for sort (can choose from " + 0 + " - " + (pos-1) + "): ");
+        System.out.print("Choose minimum index for sort (can choose from " + 0 + " - " + (pos - 1) + "): ");
         int min = Integer.valueOf(stdin.readLine());
         System.out.print(min + "\n");
-        System.out.print("Choose maximum index for sort (can choose from " + min + " - " + (pos-1) + "): ");
+        System.out.print("Choose maximum index for sort (can choose from " + min + " - " + (pos - 1) + "): ");
         int max = Integer.valueOf(stdin.readLine());
         System.out.print(max + "\n");
         System.out.print("Array before sort: [");
-        for(int i = 0; i < pos-1; i++) {
+        for (int i = 0; i < pos - 1; i++) {
             System.out.print(array[i] + ", ");
         }
-        System.out.print(array[pos-1] + "] \n");
+        System.out.print(array[pos - 1] + "] \n");
         array = quickie.sort(array, min, max);
         System.out.print("Array after sort: [");
-        for(int i = 0; i < pos-1; i++) {
+        for (int i = 0; i < pos - 1; i++) {
             System.out.print(array[i] + ", ");
         }
         System.out.print(array[pos - 1] + "] \n");

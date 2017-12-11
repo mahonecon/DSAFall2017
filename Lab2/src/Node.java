@@ -8,40 +8,34 @@
  * @author: Conor J. Mahoney
  * @version: 2017.09.20
  */
-public class Node 
-{
-private Object item;
-private Node next;
+public class Node {
 
-public Node(Object newItem) 
-{
-  item = newItem;
-  next = null;
-} // end constructor
+    private Object item;
+    private Node next;
 
-public Node(Object newItem, Node nextNode) 
-{
-  item = newItem;
-  next = nextNode;
-} // end constructor
+    public Node(Object newItem) {
+        item = newItem;
+        next = null;
+    } // end constructor
 
-public void setItem(Object newItem) 
-{
-  item = newItem;
-} // end setItem
+    public Node(Object newItem, Node nextNode) {
+        item = newItem;
+        next = nextNode;
+    } // end constructor
 
-public Object getItem() 
-{
-  return item;
-} // end getItem
+    public void setItem(Object newItem) {
+        item = newItem;
+    } // end setItem
 
-public void setNext(Node nextNode) 
-{
-  next = nextNode;
-} // end setNext
+    public Object getItem() {
+        return item;
+    } // end getItem
 
-public Node getNext() 
-{
-  return next;
-} // end getNext
+    public void setNext(Node nextNode) {
+        next = nextNode;
+    } // end setNext
+
+    public Node getNext() {
+        return next;
+    } // end getNext
 } // end class Nodeend class Node

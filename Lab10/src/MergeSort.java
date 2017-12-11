@@ -5,6 +5,7 @@
  * @author: Conor J. Mahoney
  */
 public class MergeSort {
+
     private int[] array;
 
     public MergeSort() {
@@ -12,9 +13,9 @@ public class MergeSort {
 
     public int[] sort(int[] array) {
         this.array = array;
-        for(int i = 1; i <= (array.length/2) + 2; i *= 2) {
-            for(int j = i; j < array.length; j += 2 * i) {
-                merge(array, j-i, j, Math.min(j + i, array.length)); //Breaks the array into sub arrays and then re-merges them together in the correct ordered positions
+        for (int i = 1; i <= (array.length / 2) + 2; i *= 2) {
+            for (int j = i; j < array.length; j += 2 * i) {
+                merge(array, j - i, j, Math.min(j + i, array.length)); //Breaks the array into sub arrays and then re-merges them together in the correct ordered positions
             }
         }
         return array;
@@ -27,8 +28,8 @@ public class MergeSort {
         int r = 0;
         int i = 0;
 
-        while(j < mid - start && r < end - mid) {
-            if(array[start + j] < array[mid + r]) {
+        while (j < mid - start && r < end - mid) {
+            if (array[start + j] < array[mid + r]) {
                 temp[i] = array[start + j];
                 j++;
                 i++;
@@ -40,21 +41,21 @@ public class MergeSort {
         }//end while
 
         //cleans up remaining items from the right array
-        while(r < end - mid) {
+        while (r < end - mid) {
             temp[i] = array[mid + r];
             i++;
             r++;
         }//end while
 
         //Cleans up remaining items from the left array
-        while(j < mid - start) {
+        while (j < mid - start) {
             temp[i] = array[start + j];
             j++;
             i++;
         }//end while
 
         //Manual Array Copy from *start* to *temp.length*
-        for(i = 0; i < temp.length; i++) {
+        for (i = 0; i < temp.length; i++) {
             array[start + i] = temp[i];
         }
     }//end merge

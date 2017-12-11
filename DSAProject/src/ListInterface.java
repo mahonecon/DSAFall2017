@@ -1,14 +1,15 @@
 
 public interface ListInterface<T> {
-	boolean isEmpty();
 
-	int size();
+    boolean isEmpty();
 
-	void add(int index, T item) throws ListIndexOutOfBoundsException;
+    int size();
 
-	T get(int index) throws ListIndexOutOfBoundsException;
+    void add(int index, T item) throws ListIndexOutOfBoundsException;
 
-	void remove(int index) throws ListIndexOutOfBoundsException;
+    T get(int index) throws ListIndexOutOfBoundsException;
 
-	void removeAll();
+    void remove(int index) throws ListIndexOutOfBoundsException;
+
+    void removeAll();
 } // end ListInterface

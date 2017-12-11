@@ -8,34 +8,37 @@
  * @version: 2017.09.18
  */
 import java.util.*;
+
 public class ListArrayListBased implements ListInterface {
-	protected ArrayList<Object> items = new ArrayList<Object>();
 
-	public ListArrayListBased() {
-		
-	}
-	public boolean isEmpty() {
-		return items.isEmpty();
-	}
+    protected ArrayList<Object> items = new ArrayList<Object>();
 
-	public int size() {
-		return items.size();
-	}
+    public ListArrayListBased() {
 
-	public void add(int index, Object item) throws ListIndexOutOfBoundsException {
-		items.add(index, item);
-	}
+    }
 
-	public Object get(int index) throws ListIndexOutOfBoundsException {
-		return items.get(index);
-	}
+    public boolean isEmpty() {
+        return items.isEmpty();
+    }
 
-	public void remove(int index) throws ListIndexOutOfBoundsException {
-		items.remove(index);
-	}
+    public int size() {
+        return items.size();
+    }
 
-	public void removeAll() {
-		items.clear();
-	}
+    public void add(int index, Object item) throws ListIndexOutOfBoundsException {
+        items.add(index, item);
+    }
+
+    public Object get(int index) throws ListIndexOutOfBoundsException {
+        return items.get(index);
+    }
+
+    public void remove(int index) throws ListIndexOutOfBoundsException {
+        items.remove(index);
+    }
+
+    public void removeAll() {
+        items.clear();
+    }
 
 }

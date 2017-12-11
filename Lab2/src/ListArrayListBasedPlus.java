@@ -8,24 +8,25 @@
  * @version: 2017.09.18
  */
 import java.util.*;
+
 public class ListArrayListBasedPlus extends ListArrayListBased {
-	
-	public ListArrayListBasedPlus() {
-	}
-		
-	public void reverse() {
-		ArrayList<Object> temp = new ArrayList<Object>();
-		for(int i = 0; i < items.size(); i++) {
-			temp.add(items.get((size() - 1) - i));
-		}
-		items = temp;
-	}
-	
-	public String toString() {
-		String out = "";
-		for(Object o : items) {
-			out += (o + " ");
-		}
-		return out;
-	}
+
+    public ListArrayListBasedPlus() {
+    }
+
+    public void reverse() {
+        ArrayList<Object> temp = new ArrayList<Object>();
+        for (int i = 0; i < items.size(); i++) {
+            temp.add(items.get((size() - 1) - i));
+        }
+        items = temp;
+    }
+
+    public String toString() {
+        String out = "";
+        for (Object o : items) {
+            out += (o + " ");
+        }
+        return out;
+    }
 }

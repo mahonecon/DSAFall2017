@@ -88,7 +88,7 @@ public class Driver {
                 case 8:
                     System.out.println(takeOffs + " planes have taken off ");
                     break;
-                    
+
                 case 9:
                     System.out.println("The airport has closed. Good bye!!!");
                     break;

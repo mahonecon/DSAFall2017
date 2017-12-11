@@ -1,35 +1,36 @@
+
 public abstract class BinaryTreeBasis<T> {
-  protected TreeNode<T> root;
 
-  public BinaryTreeBasis() {
-    root = null;
-  }  // end default constructor
+    protected TreeNode<T> root;
 
-  public BinaryTreeBasis(T rootItem) {
-    root = new TreeNode<T>(rootItem, null, null);
-  }  // end constructor
+    public BinaryTreeBasis() {
+        root = null;
+    }  // end default constructor
 
-  public boolean isEmpty() {
-  // Returns true if the tree is empty, else returns false.
-    return root == null;
-  }  // end isEmpty
+    public BinaryTreeBasis(T rootItem) {
+        root = new TreeNode<T>(rootItem, null, null);
+    }  // end constructor
 
-  public void makeEmpty() {
-  // Removes all nodes from the tree.
-    root = null;
-  }  // end makeEmpty
+    public boolean isEmpty() {
+        // Returns true if the tree is empty, else returns false.
+        return root == null;
+    }  // end isEmpty
 
-  public T getRootItem() throws TreeException {
-  // Returns the item in the tree's root.
-    if (root == null) {
-      throw new TreeException("TreeException: Empty tree");
-    }
-    else {
-      return root.getItem();
-    }  // end if
-  }  // end getRootItem
+    public void makeEmpty() {
+        // Removes all nodes from the tree.
+        root = null;
+    }  // end makeEmpty
 
-  public abstract void setRootItem(T newItem);
+    public T getRootItem() throws TreeException {
+        // Returns the item in the tree's root.
+        if (root == null) {
+            throw new TreeException("TreeException: Empty tree");
+        } else {
+            return root.getItem();
+        }  // end if
+    }  // end getRootItem
+
+    public abstract void setRootItem(T newItem);
     // Throws UnsupportedOperationException if operation
     // is not supported.
 

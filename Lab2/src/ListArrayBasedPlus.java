@@ -23,21 +23,20 @@ public class ListArrayBasedPlus extends ListArrayBased {
 
     public void reverse() {
         Object[] temp = new Object[size()];
-        if(size() >= 1) {
-            for(int i = 0; i < size(); i++) {
+        if (size() >= 1) {
+            for (int i = 0; i < size(); i++) {
                 temp[i] = items[(size() - 1) - i];
             }
             items = temp;
-        }
-        else {
+        } else {
             System.out.println("List has no items to reverse!");
         }
     }
 
     public void resize() {
-        int newSize = (int)Math.round(1.5*size()) + 1;
+        int newSize = (int) Math.round(1.5 * size()) + 1;
         Object[] temp = new Object[newSize];
-        for(int i = 0; i < size(); i++) {
+        for (int i = 0; i < size(); i++) {
             temp[i] = items[i];
         }
         items = temp;
@@ -45,7 +44,7 @@ public class ListArrayBasedPlus extends ListArrayBased {
 
     public String toString() {
         String s = "";
-        for(int i = 0; i < size(); i++) {
+        for (int i = 0; i < size(); i++) {
             s += items[i].toString() + " ";
         }
         return s;

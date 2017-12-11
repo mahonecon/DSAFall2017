@@ -9,23 +9,24 @@
  */
 
 public class Layer {
-	private int numItems;
-	private double weight;
-	
-	public Layer(int numItems, double weight) {
-		this.numItems = numItems;
-		this.weight = weight;
-	}
-	
-	public double weight() {
-		return weight;
-	}
-	
-	public int items() {
-		return numItems;
-	}
-	
-	public double totalWeight() {
-		return weight * numItems;
-	}
+
+    private int numItems;
+    private double weight;
+
+    public Layer(int numItems, double weight) {
+        this.numItems = numItems;
+        this.weight = weight;
+    }
+
+    public double weight() {
+        return weight;
+    }
+
+    public int items() {
+        return numItems;
+    }
+
+    public double totalWeight() {
+        return weight * numItems;
+    }
 }
